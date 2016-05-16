@@ -6,20 +6,68 @@ PHP 5.3.3 or higher [http://www.php.net/].
 You can install the bindings via Composer. Run the following command:
 ```
 composer require linksign/linksign-php-client
-
+```
 To use the bindings, use Composer's autoload:
 ```
 require_once(__DIR__ . '/vendor/autoload.php');
-
+```
 ###手动安装
 
 If you do not wish to use Composer, you can download the latest release. Then, to use the bindings, include the init.php file.
 ```
 require_once('/path/to/linksign-esign-client/autoload.php');
-
+```
 ###依赖
 This client has the following external dependencies:
 
 *PHP Curl extension [http://www.php.net/manual/en/intro.curl.php]
 *PHP JSON extension [http://php.net/manual/en/book.json.php]
 *PHP ext-mbstring extension
+
+#使用
+```
+<?php
+ 
+require_once dirname('linksign-php-client/autoload.php';
+
+ 
+
+class SdkUnitTests extends \PHPUnit_Framework_TestCase
+{
+	 
+
+	//签署文档
+	public function testSignatureDocument()
+    {
+		echo "====================== testSignatureDocument() ================== ";
+
+		$documentFileName = "/Docs/SignTest1.html";
+		$documentName = "SignTest1";
+		$fileExtension = "html";
+
+		$api_instance = new Swagger\Client\Api\DocumentApi();
+		$client_id = "caba06729b6369fdc0ebbce1"; // string | 
+		$document = new Swagger\Client\Model\Document();
+		$document->setDocumentBase64(base64_encode(file_get_contents(__DIR__ . $documentFileName)));
+		$document->setName($documentName);
+		$document->setDocumentIndex("1");
+		$document->setFileExtension($fileExtension);
+
+		$body = new \Swagger\Client\Model\DocumentDefinition(); // \Swagger\Client\Model\DocumentDefinition | 
+		$body->setDocuments(array($document));
+ 		try { 
+			$result = $api_instance->createDocument($client_id, $body);
+			$this->assertNotEmpty($body);
+			print_r($result);
+		} catch (Exception $e) {
+
+ 			if(get_class($e->getResponseObject()) == 'Swagger\Client\Model\ApiError')
+			{
+				echo "Msg:" . $e->getResponseObject()->getErrMsg()."\n";
+				echo "Code:" . $e->getResponseObject()->getErrCode()."\n";
+			}
+			echo 'Exception when calling DocumentApi->createDocument: ', $e->getMessage(), "\n";
+		}
+    }
+    }
+```
