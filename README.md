@@ -15,14 +15,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 If you do not wish to use Composer, you can download the latest release. Then, to use the bindings, include the init.php file.
 ```
-require_once('/path/to/linksign-esign-client/autoload.php');
+require_once('/path/to/linksign-php-client/autoload.php');
 ```
 ###依赖
 This client has the following external dependencies:
 
-*PHP Curl extension [http://www.php.net/manual/en/intro.curl.php]
-*PHP JSON extension [http://php.net/manual/en/book.json.php]
-*PHP ext-mbstring extension
+* PHP Curl extension [http://www.php.net/manual/en/intro.curl.php]
+* PHP JSON extension [http://php.net/manual/en/book.json.php]
+* PHP ext-mbstring extension
 
 #使用
 ```
@@ -78,7 +78,7 @@ class SdkUnitTests extends \PHPUnit_Framework_TestCase
 linksign-php-client/test/SdkUnitTests.php
 ```
 #调试工具
-*https://api.linksign.cn/debuger
+* https://api.linksign.cn/debuger
 
 #技术支持
-*https://www.linksign.cn
+* https://www.linksign.cn
