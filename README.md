@@ -23,7 +23,14 @@ This client has the following external dependencies:
 * PHP Curl extension [http://www.php.net/manual/en/intro.curl.php]
 * PHP JSON extension [http://php.net/manual/en/book.json.php]
 * PHP ext-mbstring extension
-
+###客户端数字证书配置
+linksign-php-client/lib/Configuration.php指定PEM文件的路径：
+```
+	//私钥文件(PEM格式)路径
+	protected $privateKeyFile = '';
+	//证书文件(PEM格式)路径
+	protected $certFile = '';
+```
 #使用
 ```
 <?php
