@@ -70,4 +70,15 @@ class SdkUnitTests extends \PHPUnit_Framework_TestCase
 		}
     }
     }
+    
+    ?>
 ```
+#demo
+```
+linksign-php-client/test/SdkUnitTests.php
+```
+#调试工具
+*https://api.linksign.cn/debuger
+
+#技术支持
+*https://www.linksign.cn
