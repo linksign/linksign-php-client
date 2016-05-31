@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSummary
+ * WechatRecipient
  *
  * PHP version 5
  *
@@ -35,25 +35,24 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * DocumentSummary Class Doc Comment
+ * WechatRecipient Class Doc Comment
  *
  * @category    Class
- * @description \u6587\u6863\u7B7E\u7F72\u7ED3\u679C
+ * @description \u5FAE\u4FE1\u63A5\u6536\u8005\u4FE1\u606F
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSummary implements ArrayAccess
+class WechatRecipient implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'document_id' => 'string',
-        'document_status' => '\Swagger\Client\Model\DocumentStatus',
-        'uri' => 'string'
+        'name' => 'string',
+        'open_id' => 'string'
     );
   
     static function swaggerTypes() {
@@ -65,9 +64,8 @@ class DocumentSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'document_id' => 'documentId',
-        'document_status' => 'documentStatus',
-        'uri' => 'uri'
+        'name' => 'name',
+        'open_id' => 'openId'
     );
   
     static function attributeMap() {
@@ -79,9 +77,8 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'document_id' => 'setDocumentId',
-        'document_status' => 'setDocumentStatus',
-        'uri' => 'setUri'
+        'name' => 'setName',
+        'open_id' => 'setOpenId'
     );
   
     static function setters() {
@@ -93,9 +90,8 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'document_id' => 'getDocumentId',
-        'document_status' => 'getDocumentStatus',
-        'uri' => 'getUri'
+        'name' => 'getName',
+        'open_id' => 'getOpenId'
     );
   
     static function getters() {
@@ -104,22 +100,16 @@ class DocumentSummary implements ArrayAccess
 
     
     /**
-      * $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+      * $name \u59D3\u540D
       * @var string
       */
-    protected $document_id;
+    protected $name;
     
     /**
-      * $document_status 
-      * @var \Swagger\Client\Model\DocumentStatus
-      */
-    protected $document_status;
-    
-    /**
-      * $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+      * $open_id \u516C\u4F17\u53F7\u552F\u4E00\u6807\u8BC6
       * @var string
       */
-    protected $uri;
+    protected $open_id;
     
 
     /**
@@ -130,72 +120,50 @@ class DocumentSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->document_id = $data["document_id"];
-            $this->document_status = $data["document_status"];
-            $this->uri = $data["uri"];
+            $this->name = $data["name"];
+            $this->open_id = $data["open_id"];
         }
     }
     
     /**
-     * Gets document_id
+     * Gets name
      * @return string
      */
-    public function getDocumentId()
+    public function getName()
     {
-        return $this->document_id;
+        return $this->name;
     }
   
     /**
-     * Sets document_id
-     * @param string $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+     * Sets name
+     * @param string $name \u59D3\u540D
      * @return $this
      */
-    public function setDocumentId($document_id)
+    public function setName($name)
     {
         
-        $this->document_id = $document_id;
+        $this->name = $name;
         return $this;
     }
     
     /**
-     * Gets document_status
-     * @return \Swagger\Client\Model\DocumentStatus
-     */
-    public function getDocumentStatus()
-    {
-        return $this->document_status;
-    }
-  
-    /**
-     * Sets document_status
-     * @param \Swagger\Client\Model\DocumentStatus $document_status 
-     * @return $this
-     */
-    public function setDocumentStatus($document_status)
-    {
-        
-        $this->document_status = $document_status;
-        return $this;
-    }
-    
-    /**
-     * Gets uri
+     * Gets open_id
      * @return string
      */
-    public function getUri()
+    public function getOpenId()
     {
-        return $this->uri;
+        return $this->open_id;
     }
   
     /**
-     * Sets uri
-     * @param string $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+     * Sets open_id
+     * @param string $open_id \u516C\u4F17\u53F7\u552F\u4E00\u6807\u8BC6
      * @return $this
      */
-    public function setUri($uri)
+    public function setOpenId($open_id)
     {
         
-        $this->uri = $uri;
+        $this->open_id = $open_id;
         return $this;
     }
     

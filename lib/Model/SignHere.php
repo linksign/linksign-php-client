@@ -54,8 +54,16 @@ class SignHere implements ArrayAccess
         'document_index' => 'string',
         'height' => 'int',
         'page_number' => 'int',
+        'recipient_index' => 'string',
+        'seal_height' => 'int',
         'seal_id' => 'string',
+        'seal_page_number' => 'int',
+        'seal_width' => 'int',
+        'seal_x_position' => 'int',
+        'seal_y_position' => 'int',
         'signature_id' => 'string',
+        'template_seal_field_id' => 'string',
+        'template_signature_field_id' => 'string',
         'width' => 'int',
         'x_position' => 'int',
         'y_position' => 'int'
@@ -73,8 +81,16 @@ class SignHere implements ArrayAccess
         'document_index' => 'documentIndex',
         'height' => 'height',
         'page_number' => 'pageNumber',
+        'recipient_index' => 'recipientIndex',
+        'seal_height' => 'sealHeight',
         'seal_id' => 'sealId',
+        'seal_page_number' => 'sealPageNumber',
+        'seal_width' => 'sealWidth',
+        'seal_x_position' => 'sealXPosition',
+        'seal_y_position' => 'sealYPosition',
         'signature_id' => 'signatureId',
+        'template_seal_field_id' => 'templateSealFieldId',
+        'template_signature_field_id' => 'templateSignatureFieldId',
         'width' => 'width',
         'x_position' => 'xPosition',
         'y_position' => 'yPosition'
@@ -92,8 +108,16 @@ class SignHere implements ArrayAccess
         'document_index' => 'setDocumentIndex',
         'height' => 'setHeight',
         'page_number' => 'setPageNumber',
+        'recipient_index' => 'setRecipientIndex',
+        'seal_height' => 'setSealHeight',
         'seal_id' => 'setSealId',
+        'seal_page_number' => 'setSealPageNumber',
+        'seal_width' => 'setSealWidth',
+        'seal_x_position' => 'setSealXPosition',
+        'seal_y_position' => 'setSealYPosition',
         'signature_id' => 'setSignatureId',
+        'template_seal_field_id' => 'setTemplateSealFieldId',
+        'template_signature_field_id' => 'setTemplateSignatureFieldId',
         'width' => 'setWidth',
         'x_position' => 'setXPosition',
         'y_position' => 'setYPosition'
@@ -111,8 +135,16 @@ class SignHere implements ArrayAccess
         'document_index' => 'getDocumentIndex',
         'height' => 'getHeight',
         'page_number' => 'getPageNumber',
+        'recipient_index' => 'getRecipientIndex',
+        'seal_height' => 'getSealHeight',
         'seal_id' => 'getSealId',
+        'seal_page_number' => 'getSealPageNumber',
+        'seal_width' => 'getSealWidth',
+        'seal_x_position' => 'getSealXPosition',
+        'seal_y_position' => 'getSealYPosition',
         'signature_id' => 'getSignatureId',
+        'template_seal_field_id' => 'getTemplateSealFieldId',
+        'template_signature_field_id' => 'getTemplateSignatureFieldId',
         'width' => 'getWidth',
         'x_position' => 'getXPosition',
         'y_position' => 'getYPosition'
@@ -142,16 +174,64 @@ class SignHere implements ArrayAccess
     protected $page_number;
     
     /**
+      * $recipient_index \u7B7E\u7F72\u4EBA\u7D22\u5F15
+      * @var string
+      */
+    protected $recipient_index;
+    
+    /**
+      * $seal_height \u5370\u7AE0\u9AD8\u5EA6
+      * @var int
+      */
+    protected $seal_height;
+    
+    /**
       * $seal_id \u5370\u7AE0\u7F16\u53F7
       * @var string
       */
     protected $seal_id;
     
     /**
+      * $seal_page_number \u5370\u7AE0\u9875\u7801
+      * @var int
+      */
+    protected $seal_page_number;
+    
+    /**
+      * $seal_width \u5370\u7AE0\u5BBD\u5EA6
+      * @var int
+      */
+    protected $seal_width;
+    
+    /**
+      * $seal_x_position \u5370\u7AE0X\u5750\u6807
+      * @var int
+      */
+    protected $seal_x_position;
+    
+    /**
+      * $seal_y_position \u5370\u7AE0Y\u5750\u6807
+      * @var int
+      */
+    protected $seal_y_position;
+    
+    /**
       * $signature_id \u7B7E\u540D\u7F16\u53F7
       * @var string
       */
     protected $signature_id;
+    
+    /**
+      * $template_seal_field_id \u6A21\u677F\u516C\u7AE0\u5B57\u6BB5\u540D
+      * @var string
+      */
+    protected $template_seal_field_id;
+    
+    /**
+      * $template_signature_field_id \u6A21\u677F\u7B7E\u540D\u5B57\u6BB5\u540D
+      * @var string
+      */
+    protected $template_signature_field_id;
     
     /**
       * $width \u7B7E\u540D\u57DF\u5BBD\u5EA6
@@ -183,8 +263,16 @@ class SignHere implements ArrayAccess
             $this->document_index = $data["document_index"];
             $this->height = $data["height"];
             $this->page_number = $data["page_number"];
+            $this->recipient_index = $data["recipient_index"];
+            $this->seal_height = $data["seal_height"];
             $this->seal_id = $data["seal_id"];
+            $this->seal_page_number = $data["seal_page_number"];
+            $this->seal_width = $data["seal_width"];
+            $this->seal_x_position = $data["seal_x_position"];
+            $this->seal_y_position = $data["seal_y_position"];
             $this->signature_id = $data["signature_id"];
+            $this->template_seal_field_id = $data["template_seal_field_id"];
+            $this->template_signature_field_id = $data["template_signature_field_id"];
             $this->width = $data["width"];
             $this->x_position = $data["x_position"];
             $this->y_position = $data["y_position"];
@@ -255,6 +343,48 @@ class SignHere implements ArrayAccess
     }
     
     /**
+     * Gets recipient_index
+     * @return string
+     */
+    public function getRecipientIndex()
+    {
+        return $this->recipient_index;
+    }
+  
+    /**
+     * Sets recipient_index
+     * @param string $recipient_index \u7B7E\u7F72\u4EBA\u7D22\u5F15
+     * @return $this
+     */
+    public function setRecipientIndex($recipient_index)
+    {
+        
+        $this->recipient_index = $recipient_index;
+        return $this;
+    }
+    
+    /**
+     * Gets seal_height
+     * @return int
+     */
+    public function getSealHeight()
+    {
+        return $this->seal_height;
+    }
+  
+    /**
+     * Sets seal_height
+     * @param int $seal_height \u5370\u7AE0\u9AD8\u5EA6
+     * @return $this
+     */
+    public function setSealHeight($seal_height)
+    {
+        
+        $this->seal_height = $seal_height;
+        return $this;
+    }
+    
+    /**
      * Gets seal_id
      * @return string
      */
@@ -276,6 +406,90 @@ class SignHere implements ArrayAccess
     }
     
     /**
+     * Gets seal_page_number
+     * @return int
+     */
+    public function getSealPageNumber()
+    {
+        return $this->seal_page_number;
+    }
+  
+    /**
+     * Sets seal_page_number
+     * @param int $seal_page_number \u5370\u7AE0\u9875\u7801
+     * @return $this
+     */
+    public function setSealPageNumber($seal_page_number)
+    {
+        
+        $this->seal_page_number = $seal_page_number;
+        return $this;
+    }
+    
+    /**
+     * Gets seal_width
+     * @return int
+     */
+    public function getSealWidth()
+    {
+        return $this->seal_width;
+    }
+  
+    /**
+     * Sets seal_width
+     * @param int $seal_width \u5370\u7AE0\u5BBD\u5EA6
+     * @return $this
+     */
+    public function setSealWidth($seal_width)
+    {
+        
+        $this->seal_width = $seal_width;
+        return $this;
+    }
+    
+    /**
+     * Gets seal_x_position
+     * @return int
+     */
+    public function getSealXPosition()
+    {
+        return $this->seal_x_position;
+    }
+  
+    /**
+     * Sets seal_x_position
+     * @param int $seal_x_position \u5370\u7AE0X\u5750\u6807
+     * @return $this
+     */
+    public function setSealXPosition($seal_x_position)
+    {
+        
+        $this->seal_x_position = $seal_x_position;
+        return $this;
+    }
+    
+    /**
+     * Gets seal_y_position
+     * @return int
+     */
+    public function getSealYPosition()
+    {
+        return $this->seal_y_position;
+    }
+  
+    /**
+     * Sets seal_y_position
+     * @param int $seal_y_position \u5370\u7AE0Y\u5750\u6807
+     * @return $this
+     */
+    public function setSealYPosition($seal_y_position)
+    {
+        
+        $this->seal_y_position = $seal_y_position;
+        return $this;
+    }
+    
+    /**
      * Gets signature_id
      * @return string
      */
@@ -293,6 +507,48 @@ class SignHere implements ArrayAccess
     {
         
         $this->signature_id = $signature_id;
+        return $this;
+    }
+    
+    /**
+     * Gets template_seal_field_id
+     * @return string
+     */
+    public function getTemplateSealFieldId()
+    {
+        return $this->template_seal_field_id;
+    }
+  
+    /**
+     * Sets template_seal_field_id
+     * @param string $template_seal_field_id \u6A21\u677F\u516C\u7AE0\u5B57\u6BB5\u540D
+     * @return $this
+     */
+    public function setTemplateSealFieldId($template_seal_field_id)
+    {
+        
+        $this->template_seal_field_id = $template_seal_field_id;
+        return $this;
+    }
+    
+    /**
+     * Gets template_signature_field_id
+     * @return string
+     */
+    public function getTemplateSignatureFieldId()
+    {
+        return $this->template_signature_field_id;
+    }
+  
+    /**
+     * Sets template_signature_field_id
+     * @param string $template_signature_field_id \u6A21\u677F\u7B7E\u540D\u5B57\u6BB5\u540D
+     * @return $this
+     */
+    public function setTemplateSignatureFieldId($template_signature_field_id)
+    {
+        
+        $this->template_signature_field_id = $template_signature_field_id;
         return $this;
     }
     

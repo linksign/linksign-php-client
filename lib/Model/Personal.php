@@ -51,12 +51,16 @@ class Personal implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'email_notice' => 'string',
+        'linksign_user_id' => 'string',
         'person_email' => 'string',
         'person_idcard_number' => 'string',
         'person_idcard_type' => 'string',
         'person_name' => 'string',
         'person_org_name' => 'string',
-        'person_phone' => 'string'
+        'person_phone' => 'string',
+        'recipient_index' => 'string',
+        'sms_notice' => 'string'
     );
   
     static function swaggerTypes() {
@@ -68,12 +72,16 @@ class Personal implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'email_notice' => 'emailNotice',
+        'linksign_user_id' => 'linksignUserId',
         'person_email' => 'personEmail',
         'person_idcard_number' => 'personIdcardNumber',
         'person_idcard_type' => 'personIdcardType',
         'person_name' => 'personName',
         'person_org_name' => 'personOrgName',
-        'person_phone' => 'personPhone'
+        'person_phone' => 'personPhone',
+        'recipient_index' => 'recipientIndex',
+        'sms_notice' => 'smsNotice'
     );
   
     static function attributeMap() {
@@ -85,12 +93,16 @@ class Personal implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'email_notice' => 'setEmailNotice',
+        'linksign_user_id' => 'setLinksignUserId',
         'person_email' => 'setPersonEmail',
         'person_idcard_number' => 'setPersonIdcardNumber',
         'person_idcard_type' => 'setPersonIdcardType',
         'person_name' => 'setPersonName',
         'person_org_name' => 'setPersonOrgName',
-        'person_phone' => 'setPersonPhone'
+        'person_phone' => 'setPersonPhone',
+        'recipient_index' => 'setRecipientIndex',
+        'sms_notice' => 'setSmsNotice'
     );
   
     static function setters() {
@@ -102,18 +114,34 @@ class Personal implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'email_notice' => 'getEmailNotice',
+        'linksign_user_id' => 'getLinksignUserId',
         'person_email' => 'getPersonEmail',
         'person_idcard_number' => 'getPersonIdcardNumber',
         'person_idcard_type' => 'getPersonIdcardType',
         'person_name' => 'getPersonName',
         'person_org_name' => 'getPersonOrgName',
-        'person_phone' => 'getPersonPhone'
+        'person_phone' => 'getPersonPhone',
+        'recipient_index' => 'getRecipientIndex',
+        'sms_notice' => 'getSmsNotice'
     );
   
     static function getters() {
         return self::$getters;
     }
 
+    
+    /**
+      * $email_notice \u662F\u5426\u90AE\u4EF6\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
+      * @var string
+      */
+    protected $email_notice;
+    
+    /**
+      * $linksign_user_id \u9886\u7B7E\u7CFB\u7EDF\u7528\u6237\u7F16\u53F7
+      * @var string
+      */
+    protected $linksign_user_id;
     
     /**
       * $person_email 
@@ -151,6 +179,18 @@ class Personal implements ArrayAccess
       */
     protected $person_phone;
     
+    /**
+      * $recipient_index \u4E2A\u4EBA\u7D22\u5F15
+      * @var string
+      */
+    protected $recipient_index;
+    
+    /**
+      * $sms_notice \u662F\u5426\u77ED\u4FE1\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
+      * @var string
+      */
+    protected $sms_notice;
+    
 
     /**
      * Constructor
@@ -160,13 +200,59 @@ class Personal implements ArrayAccess
     {
         
         if ($data != null) {
+            $this->email_notice = $data["email_notice"];
+            $this->linksign_user_id = $data["linksign_user_id"];
             $this->person_email = $data["person_email"];
             $this->person_idcard_number = $data["person_idcard_number"];
             $this->person_idcard_type = $data["person_idcard_type"];
             $this->person_name = $data["person_name"];
             $this->person_org_name = $data["person_org_name"];
             $this->person_phone = $data["person_phone"];
+            $this->recipient_index = $data["recipient_index"];
+            $this->sms_notice = $data["sms_notice"];
         }
+    }
+    
+    /**
+     * Gets email_notice
+     * @return string
+     */
+    public function getEmailNotice()
+    {
+        return $this->email_notice;
+    }
+  
+    /**
+     * Sets email_notice
+     * @param string $email_notice \u662F\u5426\u90AE\u4EF6\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
+     * @return $this
+     */
+    public function setEmailNotice($email_notice)
+    {
+        
+        $this->email_notice = $email_notice;
+        return $this;
+    }
+    
+    /**
+     * Gets linksign_user_id
+     * @return string
+     */
+    public function getLinksignUserId()
+    {
+        return $this->linksign_user_id;
+    }
+  
+    /**
+     * Sets linksign_user_id
+     * @param string $linksign_user_id \u9886\u7B7E\u7CFB\u7EDF\u7528\u6237\u7F16\u53F7
+     * @return $this
+     */
+    public function setLinksignUserId($linksign_user_id)
+    {
+        
+        $this->linksign_user_id = $linksign_user_id;
+        return $this;
     }
     
     /**
@@ -292,6 +378,48 @@ class Personal implements ArrayAccess
     {
         
         $this->person_phone = $person_phone;
+        return $this;
+    }
+    
+    /**
+     * Gets recipient_index
+     * @return string
+     */
+    public function getRecipientIndex()
+    {
+        return $this->recipient_index;
+    }
+  
+    /**
+     * Sets recipient_index
+     * @param string $recipient_index \u4E2A\u4EBA\u7D22\u5F15
+     * @return $this
+     */
+    public function setRecipientIndex($recipient_index)
+    {
+        
+        $this->recipient_index = $recipient_index;
+        return $this;
+    }
+    
+    /**
+     * Gets sms_notice
+     * @return string
+     */
+    public function getSmsNotice()
+    {
+        return $this->sms_notice;
+    }
+  
+    /**
+     * Sets sms_notice
+     * @param string $sms_notice \u662F\u5426\u77ED\u4FE1\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
+     * @return $this
+     */
+    public function setSmsNotice($sms_notice)
+    {
+        
+        $this->sms_notice = $sms_notice;
         return $this;
     }
     

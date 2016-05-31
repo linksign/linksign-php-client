@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSummary
+ * CustomFields
  *
  * PHP version 5
  *
@@ -35,25 +35,24 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * DocumentSummary Class Doc Comment
+ * CustomFields Class Doc Comment
  *
  * @category    Class
- * @description \u6587\u6863\u7B7E\u7F72\u7ED3\u679C
+ * @description Custom Fields PDF form
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSummary implements ArrayAccess
+class CustomFields implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'document_id' => 'string',
-        'document_status' => '\Swagger\Client\Model\DocumentStatus',
-        'uri' => 'string'
+        'image_custom_fields' => '\Swagger\Client\Model\ImageCustomField[]',
+        'text_custom_fields' => '\Swagger\Client\Model\TextCustomField[]'
     );
   
     static function swaggerTypes() {
@@ -65,9 +64,8 @@ class DocumentSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'document_id' => 'documentId',
-        'document_status' => 'documentStatus',
-        'uri' => 'uri'
+        'image_custom_fields' => 'imageCustomFields',
+        'text_custom_fields' => 'textCustomFields'
     );
   
     static function attributeMap() {
@@ -79,9 +77,8 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'document_id' => 'setDocumentId',
-        'document_status' => 'setDocumentStatus',
-        'uri' => 'setUri'
+        'image_custom_fields' => 'setImageCustomFields',
+        'text_custom_fields' => 'setTextCustomFields'
     );
   
     static function setters() {
@@ -93,9 +90,8 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'document_id' => 'getDocumentId',
-        'document_status' => 'getDocumentStatus',
-        'uri' => 'getUri'
+        'image_custom_fields' => 'getImageCustomFields',
+        'text_custom_fields' => 'getTextCustomFields'
     );
   
     static function getters() {
@@ -104,22 +100,16 @@ class DocumentSummary implements ArrayAccess
 
     
     /**
-      * $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
-      * @var string
+      * $image_custom_fields Custom picture field
+      * @var \Swagger\Client\Model\ImageCustomField[]
       */
-    protected $document_id;
+    protected $image_custom_fields;
     
     /**
-      * $document_status 
-      * @var \Swagger\Client\Model\DocumentStatus
+      * $text_custom_fields \u5B57\u6BB5\u4E32\u5B57\u6BB5
+      * @var \Swagger\Client\Model\TextCustomField[]
       */
-    protected $document_status;
-    
-    /**
-      * $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
-      * @var string
-      */
-    protected $uri;
+    protected $text_custom_fields;
     
 
     /**
@@ -130,72 +120,50 @@ class DocumentSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->document_id = $data["document_id"];
-            $this->document_status = $data["document_status"];
-            $this->uri = $data["uri"];
+            $this->image_custom_fields = $data["image_custom_fields"];
+            $this->text_custom_fields = $data["text_custom_fields"];
         }
     }
     
     /**
-     * Gets document_id
-     * @return string
+     * Gets image_custom_fields
+     * @return \Swagger\Client\Model\ImageCustomField[]
      */
-    public function getDocumentId()
+    public function getImageCustomFields()
     {
-        return $this->document_id;
+        return $this->image_custom_fields;
     }
   
     /**
-     * Sets document_id
-     * @param string $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+     * Sets image_custom_fields
+     * @param \Swagger\Client\Model\ImageCustomField[] $image_custom_fields Custom picture field
      * @return $this
      */
-    public function setDocumentId($document_id)
+    public function setImageCustomFields($image_custom_fields)
     {
         
-        $this->document_id = $document_id;
+        $this->image_custom_fields = $image_custom_fields;
         return $this;
     }
     
     /**
-     * Gets document_status
-     * @return \Swagger\Client\Model\DocumentStatus
+     * Gets text_custom_fields
+     * @return \Swagger\Client\Model\TextCustomField[]
      */
-    public function getDocumentStatus()
+    public function getTextCustomFields()
     {
-        return $this->document_status;
+        return $this->text_custom_fields;
     }
   
     /**
-     * Sets document_status
-     * @param \Swagger\Client\Model\DocumentStatus $document_status 
+     * Sets text_custom_fields
+     * @param \Swagger\Client\Model\TextCustomField[] $text_custom_fields \u5B57\u6BB5\u4E32\u5B57\u6BB5
      * @return $this
      */
-    public function setDocumentStatus($document_status)
+    public function setTextCustomFields($text_custom_fields)
     {
         
-        $this->document_status = $document_status;
-        return $this;
-    }
-    
-    /**
-     * Gets uri
-     * @return string
-     */
-    public function getUri()
-    {
-        return $this->uri;
-    }
-  
-    /**
-     * Sets uri
-     * @param string $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
-     * @return $this
-     */
-    public function setUri($uri)
-    {
-        
-        $this->uri = $uri;
+        $this->text_custom_fields = $text_custom_fields;
         return $this;
     }
     

@@ -51,6 +51,8 @@ class Company implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'email_notice' => 'string',
+        'linksign_user_id' => 'string',
         'org_authorizer_email' => 'string',
         'org_authorizer_idcard_number' => 'string',
         'org_authorizer_idcard_type' => 'string',
@@ -58,7 +60,9 @@ class Company implements ArrayAccess
         'org_authorizer_phone' => 'string',
         'org_idcard_number' => 'string',
         'org_idcard_type' => 'string',
-        'org_name' => 'string'
+        'org_name' => 'string',
+        'recipient_index' => 'string',
+        'sms_notice' => 'string'
     );
   
     static function swaggerTypes() {
@@ -70,6 +74,8 @@ class Company implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'email_notice' => 'emailNotice',
+        'linksign_user_id' => 'linksignUserId',
         'org_authorizer_email' => 'orgAuthorizerEmail',
         'org_authorizer_idcard_number' => 'orgAuthorizerIdcardNumber',
         'org_authorizer_idcard_type' => 'orgAuthorizerIdcardType',
@@ -77,7 +83,9 @@ class Company implements ArrayAccess
         'org_authorizer_phone' => 'orgAuthorizerPhone',
         'org_idcard_number' => 'orgIdcardNumber',
         'org_idcard_type' => 'orgIdcardType',
-        'org_name' => 'orgName'
+        'org_name' => 'orgName',
+        'recipient_index' => 'recipientIndex',
+        'sms_notice' => 'smsNotice'
     );
   
     static function attributeMap() {
@@ -89,6 +97,8 @@ class Company implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'email_notice' => 'setEmailNotice',
+        'linksign_user_id' => 'setLinksignUserId',
         'org_authorizer_email' => 'setOrgAuthorizerEmail',
         'org_authorizer_idcard_number' => 'setOrgAuthorizerIdcardNumber',
         'org_authorizer_idcard_type' => 'setOrgAuthorizerIdcardType',
@@ -96,7 +106,9 @@ class Company implements ArrayAccess
         'org_authorizer_phone' => 'setOrgAuthorizerPhone',
         'org_idcard_number' => 'setOrgIdcardNumber',
         'org_idcard_type' => 'setOrgIdcardType',
-        'org_name' => 'setOrgName'
+        'org_name' => 'setOrgName',
+        'recipient_index' => 'setRecipientIndex',
+        'sms_notice' => 'setSmsNotice'
     );
   
     static function setters() {
@@ -108,6 +120,8 @@ class Company implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'email_notice' => 'getEmailNotice',
+        'linksign_user_id' => 'getLinksignUserId',
         'org_authorizer_email' => 'getOrgAuthorizerEmail',
         'org_authorizer_idcard_number' => 'getOrgAuthorizerIdcardNumber',
         'org_authorizer_idcard_type' => 'getOrgAuthorizerIdcardType',
@@ -115,13 +129,27 @@ class Company implements ArrayAccess
         'org_authorizer_phone' => 'getOrgAuthorizerPhone',
         'org_idcard_number' => 'getOrgIdcardNumber',
         'org_idcard_type' => 'getOrgIdcardType',
-        'org_name' => 'getOrgName'
+        'org_name' => 'getOrgName',
+        'recipient_index' => 'getRecipientIndex',
+        'sms_notice' => 'getSmsNotice'
     );
   
     static function getters() {
         return self::$getters;
     }
 
+    
+    /**
+      * $email_notice \u662F\u5426\u90AE\u4EF6\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
+      * @var string
+      */
+    protected $email_notice;
+    
+    /**
+      * $linksign_user_id \u9886\u7B7E\u7CFB\u7EDF\u7528\u6237\u7F16\u53F7
+      * @var string
+      */
+    protected $linksign_user_id;
     
     /**
       * $org_authorizer_email \u5355\u4F4D\u6388\u6743\u4EBA\u90AE\u7BB1
@@ -171,6 +199,18 @@ class Company implements ArrayAccess
       */
     protected $org_name;
     
+    /**
+      * $recipient_index \u516C\u53F8\u7D22\u5F15
+      * @var string
+      */
+    protected $recipient_index;
+    
+    /**
+      * $sms_notice \u662F\u5426\u77ED\u4FE1\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
+      * @var string
+      */
+    protected $sms_notice;
+    
 
     /**
      * Constructor
@@ -180,6 +220,8 @@ class Company implements ArrayAccess
     {
         
         if ($data != null) {
+            $this->email_notice = $data["email_notice"];
+            $this->linksign_user_id = $data["linksign_user_id"];
             $this->org_authorizer_email = $data["org_authorizer_email"];
             $this->org_authorizer_idcard_number = $data["org_authorizer_idcard_number"];
             $this->org_authorizer_idcard_type = $data["org_authorizer_idcard_type"];
@@ -188,7 +230,51 @@ class Company implements ArrayAccess
             $this->org_idcard_number = $data["org_idcard_number"];
             $this->org_idcard_type = $data["org_idcard_type"];
             $this->org_name = $data["org_name"];
+            $this->recipient_index = $data["recipient_index"];
+            $this->sms_notice = $data["sms_notice"];
         }
+    }
+    
+    /**
+     * Gets email_notice
+     * @return string
+     */
+    public function getEmailNotice()
+    {
+        return $this->email_notice;
+    }
+  
+    /**
+     * Sets email_notice
+     * @param string $email_notice \u662F\u5426\u90AE\u4EF6\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
+     * @return $this
+     */
+    public function setEmailNotice($email_notice)
+    {
+        
+        $this->email_notice = $email_notice;
+        return $this;
+    }
+    
+    /**
+     * Gets linksign_user_id
+     * @return string
+     */
+    public function getLinksignUserId()
+    {
+        return $this->linksign_user_id;
+    }
+  
+    /**
+     * Sets linksign_user_id
+     * @param string $linksign_user_id \u9886\u7B7E\u7CFB\u7EDF\u7528\u6237\u7F16\u53F7
+     * @return $this
+     */
+    public function setLinksignUserId($linksign_user_id)
+    {
+        
+        $this->linksign_user_id = $linksign_user_id;
+        return $this;
     }
     
     /**
@@ -356,6 +442,48 @@ class Company implements ArrayAccess
     {
         
         $this->org_name = $org_name;
+        return $this;
+    }
+    
+    /**
+     * Gets recipient_index
+     * @return string
+     */
+    public function getRecipientIndex()
+    {
+        return $this->recipient_index;
+    }
+  
+    /**
+     * Sets recipient_index
+     * @param string $recipient_index \u516C\u53F8\u7D22\u5F15
+     * @return $this
+     */
+    public function setRecipientIndex($recipient_index)
+    {
+        
+        $this->recipient_index = $recipient_index;
+        return $this;
+    }
+    
+    /**
+     * Gets sms_notice
+     * @return string
+     */
+    public function getSmsNotice()
+    {
+        return $this->sms_notice;
+    }
+  
+    /**
+     * Sets sms_notice
+     * @param string $sms_notice \u662F\u5426\u77ED\u4FE1\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
+     * @return $this
+     */
+    public function setSmsNotice($sms_notice)
+    {
+        
+        $this->sms_notice = $sms_notice;
         return $this;
     }
     

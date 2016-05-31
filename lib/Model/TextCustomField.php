@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSummary
+ * TextCustomField
  *
  * PHP version 5
  *
@@ -35,25 +35,24 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * DocumentSummary Class Doc Comment
+ * TextCustomField Class Doc Comment
  *
  * @category    Class
- * @description \u6587\u6863\u7B7E\u7F72\u7ED3\u679C
+ * @description \u81EA\u5B9A\u4E49\u5B57\u6BB5
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSummary implements ArrayAccess
+class TextCustomField implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'document_id' => 'string',
-        'document_status' => '\Swagger\Client\Model\DocumentStatus',
-        'uri' => 'string'
+        'field_id' => 'string',
+        'value' => 'string'
     );
   
     static function swaggerTypes() {
@@ -65,9 +64,8 @@ class DocumentSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'document_id' => 'documentId',
-        'document_status' => 'documentStatus',
-        'uri' => 'uri'
+        'field_id' => 'fieldId',
+        'value' => 'value'
     );
   
     static function attributeMap() {
@@ -79,9 +77,8 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'document_id' => 'setDocumentId',
-        'document_status' => 'setDocumentStatus',
-        'uri' => 'setUri'
+        'field_id' => 'setFieldId',
+        'value' => 'setValue'
     );
   
     static function setters() {
@@ -93,9 +90,8 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'document_id' => 'getDocumentId',
-        'document_status' => 'getDocumentStatus',
-        'uri' => 'getUri'
+        'field_id' => 'getFieldId',
+        'value' => 'getValue'
     );
   
     static function getters() {
@@ -104,22 +100,16 @@ class DocumentSummary implements ArrayAccess
 
     
     /**
-      * $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+      * $field_id \u7528\u6237\u81EA\u5B9A\u4E49\u7684\u5B57\u6BB5\u7F16\u53F7
       * @var string
       */
-    protected $document_id;
+    protected $field_id;
     
     /**
-      * $document_status 
-      * @var \Swagger\Client\Model\DocumentStatus
-      */
-    protected $document_status;
-    
-    /**
-      * $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+      * $value \u5185\u5BB9
       * @var string
       */
-    protected $uri;
+    protected $value;
     
 
     /**
@@ -130,72 +120,50 @@ class DocumentSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->document_id = $data["document_id"];
-            $this->document_status = $data["document_status"];
-            $this->uri = $data["uri"];
+            $this->field_id = $data["field_id"];
+            $this->value = $data["value"];
         }
     }
     
     /**
-     * Gets document_id
+     * Gets field_id
      * @return string
      */
-    public function getDocumentId()
+    public function getFieldId()
     {
-        return $this->document_id;
+        return $this->field_id;
     }
   
     /**
-     * Sets document_id
-     * @param string $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+     * Sets field_id
+     * @param string $field_id \u7528\u6237\u81EA\u5B9A\u4E49\u7684\u5B57\u6BB5\u7F16\u53F7
      * @return $this
      */
-    public function setDocumentId($document_id)
+    public function setFieldId($field_id)
     {
         
-        $this->document_id = $document_id;
+        $this->field_id = $field_id;
         return $this;
     }
     
     /**
-     * Gets document_status
-     * @return \Swagger\Client\Model\DocumentStatus
-     */
-    public function getDocumentStatus()
-    {
-        return $this->document_status;
-    }
-  
-    /**
-     * Sets document_status
-     * @param \Swagger\Client\Model\DocumentStatus $document_status 
-     * @return $this
-     */
-    public function setDocumentStatus($document_status)
-    {
-        
-        $this->document_status = $document_status;
-        return $this;
-    }
-    
-    /**
-     * Gets uri
+     * Gets value
      * @return string
      */
-    public function getUri()
+    public function getValue()
     {
-        return $this->uri;
+        return $this->value;
     }
   
     /**
-     * Sets uri
-     * @param string $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+     * Sets value
+     * @param string $value \u5185\u5BB9
      * @return $this
      */
-    public function setUri($uri)
+    public function setValue($value)
     {
         
-        $this->uri = $uri;
+        $this->value = $value;
         return $this;
     }
     

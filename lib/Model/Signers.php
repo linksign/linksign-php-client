@@ -51,9 +51,9 @@ class Signers implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'signer_companys' => '\Swagger\Client\Model\SignerCompany[]',
-        'signer_persons' => '\Swagger\Client\Model\SignerPerson[]',
-        'sponsor_email' => 'string'
+        'signer_companys' => '\Swagger\Client\Model\Company[]',
+        'signer_persons' => '\Swagger\Client\Model\Personal[]',
+        'tabs' => '\Swagger\Client\Model\Tabs'
     );
   
     static function swaggerTypes() {
@@ -67,7 +67,7 @@ class Signers implements ArrayAccess
     static $attributeMap = array(
         'signer_companys' => 'signerCompanys',
         'signer_persons' => 'signerPersons',
-        'sponsor_email' => 'sponsorEmail'
+        'tabs' => 'tabs'
     );
   
     static function attributeMap() {
@@ -81,7 +81,7 @@ class Signers implements ArrayAccess
     static $setters = array(
         'signer_companys' => 'setSignerCompanys',
         'signer_persons' => 'setSignerPersons',
-        'sponsor_email' => 'setSponsorEmail'
+        'tabs' => 'setTabs'
     );
   
     static function setters() {
@@ -95,7 +95,7 @@ class Signers implements ArrayAccess
     static $getters = array(
         'signer_companys' => 'getSignerCompanys',
         'signer_persons' => 'getSignerPersons',
-        'sponsor_email' => 'getSponsorEmail'
+        'tabs' => 'getTabs'
     );
   
     static function getters() {
@@ -105,21 +105,21 @@ class Signers implements ArrayAccess
     
     /**
       * $signer_companys \u7B7E\u7F72\u4EBA\u5217\u8868\uFF08\u516C\u53F8\uFF09
-      * @var \Swagger\Client\Model\SignerCompany[]
+      * @var \Swagger\Client\Model\Company[]
       */
     protected $signer_companys;
     
     /**
       * $signer_persons \u7B7E\u7F72\u4EBA\u5217\u8868\uFF08\u4E2A\u4EBA\uFF09
-      * @var \Swagger\Client\Model\SignerPerson[]
+      * @var \Swagger\Client\Model\Personal[]
       */
     protected $signer_persons;
     
     /**
-      * $sponsor_email \u7B7E\u7F72\u53D1\u8D77\u4EBA\u90AE\u7BB1
-      * @var string
+      * $tabs \u7B7E\u7F72\u4FE1\u606F\u9762\u677F
+      * @var \Swagger\Client\Model\Tabs
       */
-    protected $sponsor_email;
+    protected $tabs;
     
 
     /**
@@ -132,13 +132,13 @@ class Signers implements ArrayAccess
         if ($data != null) {
             $this->signer_companys = $data["signer_companys"];
             $this->signer_persons = $data["signer_persons"];
-            $this->sponsor_email = $data["sponsor_email"];
+            $this->tabs = $data["tabs"];
         }
     }
     
     /**
      * Gets signer_companys
-     * @return \Swagger\Client\Model\SignerCompany[]
+     * @return \Swagger\Client\Model\Company[]
      */
     public function getSignerCompanys()
     {
@@ -147,7 +147,7 @@ class Signers implements ArrayAccess
   
     /**
      * Sets signer_companys
-     * @param \Swagger\Client\Model\SignerCompany[] $signer_companys \u7B7E\u7F72\u4EBA\u5217\u8868\uFF08\u516C\u53F8\uFF09
+     * @param \Swagger\Client\Model\Company[] $signer_companys \u7B7E\u7F72\u4EBA\u5217\u8868\uFF08\u516C\u53F8\uFF09
      * @return $this
      */
     public function setSignerCompanys($signer_companys)
@@ -159,7 +159,7 @@ class Signers implements ArrayAccess
     
     /**
      * Gets signer_persons
-     * @return \Swagger\Client\Model\SignerPerson[]
+     * @return \Swagger\Client\Model\Personal[]
      */
     public function getSignerPersons()
     {
@@ -168,7 +168,7 @@ class Signers implements ArrayAccess
   
     /**
      * Sets signer_persons
-     * @param \Swagger\Client\Model\SignerPerson[] $signer_persons \u7B7E\u7F72\u4EBA\u5217\u8868\uFF08\u4E2A\u4EBA\uFF09
+     * @param \Swagger\Client\Model\Personal[] $signer_persons \u7B7E\u7F72\u4EBA\u5217\u8868\uFF08\u4E2A\u4EBA\uFF09
      * @return $this
      */
     public function setSignerPersons($signer_persons)
@@ -179,23 +179,23 @@ class Signers implements ArrayAccess
     }
     
     /**
-     * Gets sponsor_email
-     * @return string
+     * Gets tabs
+     * @return \Swagger\Client\Model\Tabs
      */
-    public function getSponsorEmail()
+    public function getTabs()
     {
-        return $this->sponsor_email;
+        return $this->tabs;
     }
   
     /**
-     * Sets sponsor_email
-     * @param string $sponsor_email \u7B7E\u7F72\u53D1\u8D77\u4EBA\u90AE\u7BB1
+     * Sets tabs
+     * @param \Swagger\Client\Model\Tabs $tabs \u7B7E\u7F72\u4FE1\u606F\u9762\u677F
      * @return $this
      */
-    public function setSponsorEmail($sponsor_email)
+    public function setTabs($tabs)
     {
         
-        $this->sponsor_email = $sponsor_email;
+        $this->tabs = $tabs;
         return $this;
     }
     

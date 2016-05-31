@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSummary
+ * DocumentStatus
  *
  * PHP version 5
  *
@@ -35,25 +35,25 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * DocumentSummary Class Doc Comment
+ * DocumentStatus Class Doc Comment
  *
  * @category    Class
- * @description \u6587\u6863\u7B7E\u7F72\u7ED3\u679C
+ * @description 
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSummary implements ArrayAccess
+class DocumentStatus implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'document_id' => 'string',
-        'document_status' => '\Swagger\Client\Model\DocumentStatus',
-        'uri' => 'string'
+        'company_signer_status' => '\Swagger\Client\Model\SignerStatus[]',
+        'personal_signer_status' => '\Swagger\Client\Model\SignerStatus[]',
+        'status' => 'string'
     );
   
     static function swaggerTypes() {
@@ -65,9 +65,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'document_id' => 'documentId',
-        'document_status' => 'documentStatus',
-        'uri' => 'uri'
+        'company_signer_status' => 'companySignerStatus',
+        'personal_signer_status' => 'personalSignerStatus',
+        'status' => 'status'
     );
   
     static function attributeMap() {
@@ -79,9 +79,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'document_id' => 'setDocumentId',
-        'document_status' => 'setDocumentStatus',
-        'uri' => 'setUri'
+        'company_signer_status' => 'setCompanySignerStatus',
+        'personal_signer_status' => 'setPersonalSignerStatus',
+        'status' => 'setStatus'
     );
   
     static function setters() {
@@ -93,9 +93,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'document_id' => 'getDocumentId',
-        'document_status' => 'getDocumentStatus',
-        'uri' => 'getUri'
+        'company_signer_status' => 'getCompanySignerStatus',
+        'personal_signer_status' => 'getPersonalSignerStatus',
+        'status' => 'getStatus'
     );
   
     static function getters() {
@@ -104,22 +104,22 @@ class DocumentSummary implements ArrayAccess
 
     
     /**
-      * $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
-      * @var string
+      * $company_signer_status 
+      * @var \Swagger\Client\Model\SignerStatus[]
       */
-    protected $document_id;
+    protected $company_signer_status;
     
     /**
-      * $document_status 
-      * @var \Swagger\Client\Model\DocumentStatus
+      * $personal_signer_status 
+      * @var \Swagger\Client\Model\SignerStatus[]
       */
-    protected $document_status;
+    protected $personal_signer_status;
     
     /**
-      * $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+      * $status Document status (  signing, signed)
       * @var string
       */
-    protected $uri;
+    protected $status;
     
 
     /**
@@ -130,72 +130,72 @@ class DocumentSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->document_id = $data["document_id"];
-            $this->document_status = $data["document_status"];
-            $this->uri = $data["uri"];
+            $this->company_signer_status = $data["company_signer_status"];
+            $this->personal_signer_status = $data["personal_signer_status"];
+            $this->status = $data["status"];
         }
     }
     
     /**
-     * Gets document_id
-     * @return string
+     * Gets company_signer_status
+     * @return \Swagger\Client\Model\SignerStatus[]
      */
-    public function getDocumentId()
+    public function getCompanySignerStatus()
     {
-        return $this->document_id;
+        return $this->company_signer_status;
     }
   
     /**
-     * Sets document_id
-     * @param string $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+     * Sets company_signer_status
+     * @param \Swagger\Client\Model\SignerStatus[] $company_signer_status 
      * @return $this
      */
-    public function setDocumentId($document_id)
+    public function setCompanySignerStatus($company_signer_status)
     {
         
-        $this->document_id = $document_id;
+        $this->company_signer_status = $company_signer_status;
         return $this;
     }
     
     /**
-     * Gets document_status
-     * @return \Swagger\Client\Model\DocumentStatus
+     * Gets personal_signer_status
+     * @return \Swagger\Client\Model\SignerStatus[]
      */
-    public function getDocumentStatus()
+    public function getPersonalSignerStatus()
     {
-        return $this->document_status;
+        return $this->personal_signer_status;
     }
   
     /**
-     * Sets document_status
-     * @param \Swagger\Client\Model\DocumentStatus $document_status 
+     * Sets personal_signer_status
+     * @param \Swagger\Client\Model\SignerStatus[] $personal_signer_status 
      * @return $this
      */
-    public function setDocumentStatus($document_status)
+    public function setPersonalSignerStatus($personal_signer_status)
     {
         
-        $this->document_status = $document_status;
+        $this->personal_signer_status = $personal_signer_status;
         return $this;
     }
     
     /**
-     * Gets uri
+     * Gets status
      * @return string
      */
-    public function getUri()
+    public function getStatus()
     {
-        return $this->uri;
+        return $this->status;
     }
   
     /**
-     * Sets uri
-     * @param string $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+     * Sets status
+     * @param string $status Document status (  signing, signed)
      * @return $this
      */
-    public function setUri($uri)
+    public function setStatus($status)
     {
         
-        $this->uri = $uri;
+        $this->status = $status;
         return $this;
     }
     

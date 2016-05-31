@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSummary
+ * EmailRecipient
  *
  * PHP version 5
  *
@@ -35,25 +35,25 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * DocumentSummary Class Doc Comment
+ * EmailRecipient Class Doc Comment
  *
  * @category    Class
- * @description \u6587\u6863\u7B7E\u7F72\u7ED3\u679C
+ * @description \u90AE\u4EF6\u63A5\u6536\u8005\u4FE1\u606F
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSummary implements ArrayAccess
+class EmailRecipient implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'document_id' => 'string',
-        'document_status' => '\Swagger\Client\Model\DocumentStatus',
-        'uri' => 'string'
+        'bcc' => 'string',
+        'email_address' => 'string',
+        'name' => 'string'
     );
   
     static function swaggerTypes() {
@@ -65,9 +65,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'document_id' => 'documentId',
-        'document_status' => 'documentStatus',
-        'uri' => 'uri'
+        'bcc' => 'bcc',
+        'email_address' => 'emailAddress',
+        'name' => 'name'
     );
   
     static function attributeMap() {
@@ -79,9 +79,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'document_id' => 'setDocumentId',
-        'document_status' => 'setDocumentStatus',
-        'uri' => 'setUri'
+        'bcc' => 'setBcc',
+        'email_address' => 'setEmailAddress',
+        'name' => 'setName'
     );
   
     static function setters() {
@@ -93,9 +93,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'document_id' => 'getDocumentId',
-        'document_status' => 'getDocumentStatus',
-        'uri' => 'getUri'
+        'bcc' => 'getBcc',
+        'email_address' => 'getEmailAddress',
+        'name' => 'getName'
     );
   
     static function getters() {
@@ -104,22 +104,22 @@ class DocumentSummary implements ArrayAccess
 
     
     /**
-      * $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+      * $bcc \u79D8\u5BC6\u6284\u9001\uFF08y/n\uFF09
       * @var string
       */
-    protected $document_id;
+    protected $bcc;
     
     /**
-      * $document_status 
-      * @var \Swagger\Client\Model\DocumentStatus
-      */
-    protected $document_status;
-    
-    /**
-      * $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+      * $email_address \u90AE\u4EF6\u5730\u5740
       * @var string
       */
-    protected $uri;
+    protected $email_address;
+    
+    /**
+      * $name \u59D3\u540D
+      * @var string
+      */
+    protected $name;
     
 
     /**
@@ -130,72 +130,72 @@ class DocumentSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->document_id = $data["document_id"];
-            $this->document_status = $data["document_status"];
-            $this->uri = $data["uri"];
+            $this->bcc = $data["bcc"];
+            $this->email_address = $data["email_address"];
+            $this->name = $data["name"];
         }
     }
     
     /**
-     * Gets document_id
+     * Gets bcc
      * @return string
      */
-    public function getDocumentId()
+    public function getBcc()
     {
-        return $this->document_id;
+        return $this->bcc;
     }
   
     /**
-     * Sets document_id
-     * @param string $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+     * Sets bcc
+     * @param string $bcc \u79D8\u5BC6\u6284\u9001\uFF08y/n\uFF09
      * @return $this
      */
-    public function setDocumentId($document_id)
+    public function setBcc($bcc)
     {
         
-        $this->document_id = $document_id;
+        $this->bcc = $bcc;
         return $this;
     }
     
     /**
-     * Gets document_status
-     * @return \Swagger\Client\Model\DocumentStatus
+     * Gets email_address
+     * @return string
      */
-    public function getDocumentStatus()
+    public function getEmailAddress()
     {
-        return $this->document_status;
+        return $this->email_address;
     }
   
     /**
-     * Sets document_status
-     * @param \Swagger\Client\Model\DocumentStatus $document_status 
+     * Sets email_address
+     * @param string $email_address \u90AE\u4EF6\u5730\u5740
      * @return $this
      */
-    public function setDocumentStatus($document_status)
+    public function setEmailAddress($email_address)
     {
         
-        $this->document_status = $document_status;
+        $this->email_address = $email_address;
         return $this;
     }
     
     /**
-     * Gets uri
+     * Gets name
      * @return string
      */
-    public function getUri()
+    public function getName()
     {
-        return $this->uri;
+        return $this->name;
     }
   
     /**
-     * Sets uri
-     * @param string $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+     * Sets name
+     * @param string $name \u59D3\u540D
      * @return $this
      */
-    public function setUri($uri)
+    public function setName($name)
     {
         
-        $this->uri = $uri;
+        $this->name = $name;
         return $this;
     }
     

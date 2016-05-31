@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSummary
+ * SignerStatus
  *
  * PHP version 5
  *
@@ -35,25 +35,25 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * DocumentSummary Class Doc Comment
+ * SignerStatus Class Doc Comment
  *
  * @category    Class
- * @description \u6587\u6863\u7B7E\u7F72\u7ED3\u679C
+ * @description 
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSummary implements ArrayAccess
+class SignerStatus implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'document_id' => 'string',
-        'document_status' => '\Swagger\Client\Model\DocumentStatus',
-        'uri' => 'string'
+        'recipient_index' => 'string',
+        'signer_uri' => 'string',
+        'status' => 'string'
     );
   
     static function swaggerTypes() {
@@ -65,9 +65,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'document_id' => 'documentId',
-        'document_status' => 'documentStatus',
-        'uri' => 'uri'
+        'recipient_index' => 'recipientIndex',
+        'signer_uri' => 'signerUri',
+        'status' => 'status'
     );
   
     static function attributeMap() {
@@ -79,9 +79,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'document_id' => 'setDocumentId',
-        'document_status' => 'setDocumentStatus',
-        'uri' => 'setUri'
+        'recipient_index' => 'setRecipientIndex',
+        'signer_uri' => 'setSignerUri',
+        'status' => 'setStatus'
     );
   
     static function setters() {
@@ -93,9 +93,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'document_id' => 'getDocumentId',
-        'document_status' => 'getDocumentStatus',
-        'uri' => 'getUri'
+        'recipient_index' => 'getRecipientIndex',
+        'signer_uri' => 'getSignerUri',
+        'status' => 'getStatus'
     );
   
     static function getters() {
@@ -104,22 +104,22 @@ class DocumentSummary implements ArrayAccess
 
     
     /**
-      * $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+      * $recipient_index 
       * @var string
       */
-    protected $document_id;
+    protected $recipient_index;
     
     /**
-      * $document_status 
-      * @var \Swagger\Client\Model\DocumentStatus
-      */
-    protected $document_status;
-    
-    /**
-      * $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+      * $signer_uri 
       * @var string
       */
-    protected $uri;
+    protected $signer_uri;
+    
+    /**
+      * $status signature status(signing,signed)
+      * @var string
+      */
+    protected $status;
     
 
     /**
@@ -130,72 +130,72 @@ class DocumentSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->document_id = $data["document_id"];
-            $this->document_status = $data["document_status"];
-            $this->uri = $data["uri"];
+            $this->recipient_index = $data["recipient_index"];
+            $this->signer_uri = $data["signer_uri"];
+            $this->status = $data["status"];
         }
     }
     
     /**
-     * Gets document_id
+     * Gets recipient_index
      * @return string
      */
-    public function getDocumentId()
+    public function getRecipientIndex()
     {
-        return $this->document_id;
+        return $this->recipient_index;
     }
   
     /**
-     * Sets document_id
-     * @param string $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+     * Sets recipient_index
+     * @param string $recipient_index 
      * @return $this
      */
-    public function setDocumentId($document_id)
+    public function setRecipientIndex($recipient_index)
     {
         
-        $this->document_id = $document_id;
+        $this->recipient_index = $recipient_index;
         return $this;
     }
     
     /**
-     * Gets document_status
-     * @return \Swagger\Client\Model\DocumentStatus
+     * Gets signer_uri
+     * @return string
      */
-    public function getDocumentStatus()
+    public function getSignerUri()
     {
-        return $this->document_status;
+        return $this->signer_uri;
     }
   
     /**
-     * Sets document_status
-     * @param \Swagger\Client\Model\DocumentStatus $document_status 
+     * Sets signer_uri
+     * @param string $signer_uri 
      * @return $this
      */
-    public function setDocumentStatus($document_status)
+    public function setSignerUri($signer_uri)
     {
         
-        $this->document_status = $document_status;
+        $this->signer_uri = $signer_uri;
         return $this;
     }
     
     /**
-     * Gets uri
+     * Gets status
      * @return string
      */
-    public function getUri()
+    public function getStatus()
     {
-        return $this->uri;
+        return $this->status;
     }
   
     /**
-     * Sets uri
-     * @param string $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+     * Sets status
+     * @param string $status signature status(signing,signed)
      * @return $this
      */
-    public function setUri($uri)
+    public function setStatus($status)
     {
         
-        $this->uri = $uri;
+        $this->status = $status;
         return $this;
     }
     

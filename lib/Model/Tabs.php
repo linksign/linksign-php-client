@@ -38,7 +38,7 @@ use \ArrayAccess;
  * Tabs Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description \u7B7E\u7F72\u76F8\u5173\u4FE1\u606F
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -51,7 +51,7 @@ class Tabs implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'date_tabs' => '\DateTime[]',
+        'date_tabs' => '\Swagger\Client\Model\SignDateTime[]',
         'sign_here_tabs' => '\Swagger\Client\Model\SignHere[]'
     );
   
@@ -100,8 +100,8 @@ class Tabs implements ArrayAccess
 
     
     /**
-      * $date_tabs 
-      * @var \DateTime[]
+      * $date_tabs \u7B7E\u7F72\u65F6\u95F4\u4FE1\u606F
+      * @var \Swagger\Client\Model\SignDateTime[]
       */
     protected $date_tabs;
     
@@ -127,7 +127,7 @@ class Tabs implements ArrayAccess
     
     /**
      * Gets date_tabs
-     * @return \DateTime[]
+     * @return \Swagger\Client\Model\SignDateTime[]
      */
     public function getDateTabs()
     {
@@ -136,7 +136,7 @@ class Tabs implements ArrayAccess
   
     /**
      * Sets date_tabs
-     * @param \DateTime[] $date_tabs 
+     * @param \Swagger\Client\Model\SignDateTime[] $date_tabs \u7B7E\u7F72\u65F6\u95F4\u4FE1\u606F
      * @return $this
      */
     public function setDateTabs($date_tabs)

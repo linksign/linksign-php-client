@@ -51,10 +51,13 @@ class DocumentDefinition implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'app' => '\Swagger\Client\Model\App',
+        'custom_fields' => '\Swagger\Client\Model\CustomFields',
         'documents' => '\Swagger\Client\Model\Document[]',
-        'email_blurb' => 'string',
-        'email_subject' => 'string',
-        'signers' => '\Swagger\Client\Model\Signers'
+        'extra_recipients' => '\Swagger\Client\Model\ExtraRecipients',
+        'id_auth' => '\Swagger\Client\Model\IdAuth',
+        'signers' => '\Swagger\Client\Model\Signers',
+        'template_id' => 'string'
     );
   
     static function swaggerTypes() {
@@ -66,10 +69,13 @@ class DocumentDefinition implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'app' => 'app',
+        'custom_fields' => 'customFields',
         'documents' => 'documents',
-        'email_blurb' => 'emailBlurb',
-        'email_subject' => 'emailSubject',
-        'signers' => 'signers'
+        'extra_recipients' => 'extraRecipients',
+        'id_auth' => 'idAuth',
+        'signers' => 'signers',
+        'template_id' => 'templateId'
     );
   
     static function attributeMap() {
@@ -81,10 +87,13 @@ class DocumentDefinition implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'app' => 'setApp',
+        'custom_fields' => 'setCustomFields',
         'documents' => 'setDocuments',
-        'email_blurb' => 'setEmailBlurb',
-        'email_subject' => 'setEmailSubject',
-        'signers' => 'setSigners'
+        'extra_recipients' => 'setExtraRecipients',
+        'id_auth' => 'setIdAuth',
+        'signers' => 'setSigners',
+        'template_id' => 'setTemplateId'
     );
   
     static function setters() {
@@ -96,10 +105,13 @@ class DocumentDefinition implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'app' => 'getApp',
+        'custom_fields' => 'getCustomFields',
         'documents' => 'getDocuments',
-        'email_blurb' => 'getEmailBlurb',
-        'email_subject' => 'getEmailSubject',
-        'signers' => 'getSigners'
+        'extra_recipients' => 'getExtraRecipients',
+        'id_auth' => 'getIdAuth',
+        'signers' => 'getSigners',
+        'template_id' => 'getTemplateId'
     );
   
     static function getters() {
@@ -108,28 +120,46 @@ class DocumentDefinition implements ArrayAccess
 
     
     /**
+      * $app Application configuration
+      * @var \Swagger\Client\Model\App
+      */
+    protected $app;
+    
+    /**
+      * $custom_fields \u81EA\u5B9A\u4E49\u5B57\u6BB5
+      * @var \Swagger\Client\Model\CustomFields
+      */
+    protected $custom_fields;
+    
+    /**
       * $documents \u5F85\u7B7E\u7F72\u7684\u6587\u6863\u5217\u8868
       * @var \Swagger\Client\Model\Document[]
       */
     protected $documents;
     
     /**
-      * $email_blurb \u90AE\u4EF6\u7B80\u4ECB
-      * @var string
+      * $extra_recipients \u5176\u5B83\u63A5\u6536\u4EBA
+      * @var \Swagger\Client\Model\ExtraRecipients
       */
-    protected $email_blurb;
+    protected $extra_recipients;
     
     /**
-      * $email_subject \u90AE\u4EF6\u4E3B\u9898
-      * @var string
+      * $id_auth Signature authentication
+      * @var \Swagger\Client\Model\IdAuth
       */
-    protected $email_subject;
+    protected $id_auth;
     
     /**
       * $signers \u7B7E\u7F72\u4EBA
       * @var \Swagger\Client\Model\Signers
       */
     protected $signers;
+    
+    /**
+      * $template_id Custom template number
+      * @var string
+      */
+    protected $template_id;
     
 
     /**
@@ -140,11 +170,56 @@ class DocumentDefinition implements ArrayAccess
     {
         
         if ($data != null) {
+            $this->app = $data["app"];
+            $this->custom_fields = $data["custom_fields"];
             $this->documents = $data["documents"];
-            $this->email_blurb = $data["email_blurb"];
-            $this->email_subject = $data["email_subject"];
+            $this->extra_recipients = $data["extra_recipients"];
+            $this->id_auth = $data["id_auth"];
             $this->signers = $data["signers"];
+            $this->template_id = $data["template_id"];
         }
+    }
+    
+    /**
+     * Gets app
+     * @return \Swagger\Client\Model\App
+     */
+    public function getApp()
+    {
+        return $this->app;
+    }
+  
+    /**
+     * Sets app
+     * @param \Swagger\Client\Model\App $app Application configuration
+     * @return $this
+     */
+    public function setApp($app)
+    {
+        
+        $this->app = $app;
+        return $this;
+    }
+    
+    /**
+     * Gets custom_fields
+     * @return \Swagger\Client\Model\CustomFields
+     */
+    public function getCustomFields()
+    {
+        return $this->custom_fields;
+    }
+  
+    /**
+     * Sets custom_fields
+     * @param \Swagger\Client\Model\CustomFields $custom_fields \u81EA\u5B9A\u4E49\u5B57\u6BB5
+     * @return $this
+     */
+    public function setCustomFields($custom_fields)
+    {
+        
+        $this->custom_fields = $custom_fields;
+        return $this;
     }
     
     /**
@@ -169,44 +244,44 @@ class DocumentDefinition implements ArrayAccess
     }
     
     /**
-     * Gets email_blurb
-     * @return string
+     * Gets extra_recipients
+     * @return \Swagger\Client\Model\ExtraRecipients
      */
-    public function getEmailBlurb()
+    public function getExtraRecipients()
     {
-        return $this->email_blurb;
+        return $this->extra_recipients;
     }
   
     /**
-     * Sets email_blurb
-     * @param string $email_blurb \u90AE\u4EF6\u7B80\u4ECB
+     * Sets extra_recipients
+     * @param \Swagger\Client\Model\ExtraRecipients $extra_recipients \u5176\u5B83\u63A5\u6536\u4EBA
      * @return $this
      */
-    public function setEmailBlurb($email_blurb)
+    public function setExtraRecipients($extra_recipients)
     {
         
-        $this->email_blurb = $email_blurb;
+        $this->extra_recipients = $extra_recipients;
         return $this;
     }
     
     /**
-     * Gets email_subject
-     * @return string
+     * Gets id_auth
+     * @return \Swagger\Client\Model\IdAuth
      */
-    public function getEmailSubject()
+    public function getIdAuth()
     {
-        return $this->email_subject;
+        return $this->id_auth;
     }
   
     /**
-     * Sets email_subject
-     * @param string $email_subject \u90AE\u4EF6\u4E3B\u9898
+     * Sets id_auth
+     * @param \Swagger\Client\Model\IdAuth $id_auth Signature authentication
      * @return $this
      */
-    public function setEmailSubject($email_subject)
+    public function setIdAuth($id_auth)
     {
         
-        $this->email_subject = $email_subject;
+        $this->id_auth = $id_auth;
         return $this;
     }
     
@@ -228,6 +303,27 @@ class DocumentDefinition implements ArrayAccess
     {
         
         $this->signers = $signers;
+        return $this;
+    }
+    
+    /**
+     * Gets template_id
+     * @return string
+     */
+    public function getTemplateId()
+    {
+        return $this->template_id;
+    }
+  
+    /**
+     * Sets template_id
+     * @param string $template_id Custom template number
+     * @return $this
+     */
+    public function setTemplateId($template_id)
+    {
+        
+        $this->template_id = $template_id;
         return $this;
     }
     

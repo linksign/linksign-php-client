@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSummary
+ * ImageCustomField
  *
  * PHP version 5
  *
@@ -35,25 +35,26 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * DocumentSummary Class Doc Comment
+ * ImageCustomField Class Doc Comment
  *
  * @category    Class
- * @description \u6587\u6863\u7B7E\u7F72\u7ED3\u679C
+ * @description Custom fields for image type
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSummary implements ArrayAccess
+class ImageCustomField implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'document_id' => 'string',
-        'document_status' => '\Swagger\Client\Model\DocumentStatus',
-        'uri' => 'string'
+        'field_id' => 'string',
+        'image_base64' => 'string',
+        'seal_id' => 'string',
+        'signature_id' => 'string'
     );
   
     static function swaggerTypes() {
@@ -65,9 +66,10 @@ class DocumentSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'document_id' => 'documentId',
-        'document_status' => 'documentStatus',
-        'uri' => 'uri'
+        'field_id' => 'fieldId',
+        'image_base64' => 'imageBase64',
+        'seal_id' => 'sealId',
+        'signature_id' => 'signatureId'
     );
   
     static function attributeMap() {
@@ -79,9 +81,10 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'document_id' => 'setDocumentId',
-        'document_status' => 'setDocumentStatus',
-        'uri' => 'setUri'
+        'field_id' => 'setFieldId',
+        'image_base64' => 'setImageBase64',
+        'seal_id' => 'setSealId',
+        'signature_id' => 'setSignatureId'
     );
   
     static function setters() {
@@ -93,9 +96,10 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'document_id' => 'getDocumentId',
-        'document_status' => 'getDocumentStatus',
-        'uri' => 'getUri'
+        'field_id' => 'getFieldId',
+        'image_base64' => 'getImageBase64',
+        'seal_id' => 'getSealId',
+        'signature_id' => 'getSignatureId'
     );
   
     static function getters() {
@@ -104,22 +108,28 @@ class DocumentSummary implements ArrayAccess
 
     
     /**
-      * $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+      * $field_id Custom field id
       * @var string
       */
-    protected $document_id;
+    protected $field_id;
     
     /**
-      * $document_status 
-      * @var \Swagger\Client\Model\DocumentStatus
-      */
-    protected $document_status;
-    
-    /**
-      * $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+      * $image_base64 Base64 image file format
       * @var string
       */
-    protected $uri;
+    protected $image_base64;
+    
+    /**
+      * $seal_id user seal ID
+      * @var string
+      */
+    protected $seal_id;
+    
+    /**
+      * $signature_id user signature ID
+      * @var string
+      */
+    protected $signature_id;
     
 
     /**
@@ -130,72 +140,94 @@ class DocumentSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->document_id = $data["document_id"];
-            $this->document_status = $data["document_status"];
-            $this->uri = $data["uri"];
+            $this->field_id = $data["field_id"];
+            $this->image_base64 = $data["image_base64"];
+            $this->seal_id = $data["seal_id"];
+            $this->signature_id = $data["signature_id"];
         }
     }
     
     /**
-     * Gets document_id
+     * Gets field_id
      * @return string
      */
-    public function getDocumentId()
+    public function getFieldId()
     {
-        return $this->document_id;
+        return $this->field_id;
     }
   
     /**
-     * Sets document_id
-     * @param string $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+     * Sets field_id
+     * @param string $field_id Custom field id
      * @return $this
      */
-    public function setDocumentId($document_id)
+    public function setFieldId($field_id)
     {
         
-        $this->document_id = $document_id;
+        $this->field_id = $field_id;
         return $this;
     }
     
     /**
-     * Gets document_status
-     * @return \Swagger\Client\Model\DocumentStatus
+     * Gets image_base64
+     * @return string
      */
-    public function getDocumentStatus()
+    public function getImageBase64()
     {
-        return $this->document_status;
+        return $this->image_base64;
     }
   
     /**
-     * Sets document_status
-     * @param \Swagger\Client\Model\DocumentStatus $document_status 
+     * Sets image_base64
+     * @param string $image_base64 Base64 image file format
      * @return $this
      */
-    public function setDocumentStatus($document_status)
+    public function setImageBase64($image_base64)
     {
         
-        $this->document_status = $document_status;
+        $this->image_base64 = $image_base64;
         return $this;
     }
     
     /**
-     * Gets uri
+     * Gets seal_id
      * @return string
      */
-    public function getUri()
+    public function getSealId()
     {
-        return $this->uri;
+        return $this->seal_id;
     }
   
     /**
-     * Sets uri
-     * @param string $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+     * Sets seal_id
+     * @param string $seal_id user seal ID
      * @return $this
      */
-    public function setUri($uri)
+    public function setSealId($seal_id)
     {
         
-        $this->uri = $uri;
+        $this->seal_id = $seal_id;
+        return $this;
+    }
+    
+    /**
+     * Gets signature_id
+     * @return string
+     */
+    public function getSignatureId()
+    {
+        return $this->signature_id;
+    }
+  
+    /**
+     * Sets signature_id
+     * @param string $signature_id user signature ID
+     * @return $this
+     */
+    public function setSignatureId($signature_id)
+    {
+        
+        $this->signature_id = $signature_id;
         return $this;
     }
     

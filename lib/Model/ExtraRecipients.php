@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSummary
+ * ExtraRecipients
  *
  * PHP version 5
  *
@@ -35,25 +35,25 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * DocumentSummary Class Doc Comment
+ * ExtraRecipients Class Doc Comment
  *
  * @category    Class
- * @description \u6587\u6863\u7B7E\u7F72\u7ED3\u679C
+ * @description \u5176\u5B83\u63A5\u6536\u4EBA
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSummary implements ArrayAccess
+class ExtraRecipients implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'document_id' => 'string',
-        'document_status' => '\Swagger\Client\Model\DocumentStatus',
-        'uri' => 'string'
+        'emai_recipients' => '\Swagger\Client\Model\EmailRecipient[]',
+        'sms_recipients' => '\Swagger\Client\Model\SmsRecipient[]',
+        'wechat_recipients' => '\Swagger\Client\Model\WechatRecipient[]'
     );
   
     static function swaggerTypes() {
@@ -65,9 +65,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'document_id' => 'documentId',
-        'document_status' => 'documentStatus',
-        'uri' => 'uri'
+        'emai_recipients' => 'emaiRecipients',
+        'sms_recipients' => 'smsRecipients',
+        'wechat_recipients' => 'wechatRecipients'
     );
   
     static function attributeMap() {
@@ -79,9 +79,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'document_id' => 'setDocumentId',
-        'document_status' => 'setDocumentStatus',
-        'uri' => 'setUri'
+        'emai_recipients' => 'setEmaiRecipients',
+        'sms_recipients' => 'setSmsRecipients',
+        'wechat_recipients' => 'setWechatRecipients'
     );
   
     static function setters() {
@@ -93,9 +93,9 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'document_id' => 'getDocumentId',
-        'document_status' => 'getDocumentStatus',
-        'uri' => 'getUri'
+        'emai_recipients' => 'getEmaiRecipients',
+        'sms_recipients' => 'getSmsRecipients',
+        'wechat_recipients' => 'getWechatRecipients'
     );
   
     static function getters() {
@@ -104,22 +104,22 @@ class DocumentSummary implements ArrayAccess
 
     
     /**
-      * $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
-      * @var string
+      * $emai_recipients \u6240\u6709\u90AE\u4EF6\u63A5\u6536\u8005
+      * @var \Swagger\Client\Model\EmailRecipient[]
       */
-    protected $document_id;
+    protected $emai_recipients;
     
     /**
-      * $document_status 
-      * @var \Swagger\Client\Model\DocumentStatus
+      * $sms_recipients \u6240\u6709\u77ED\u4FE1\u63A5\u6536\u8005
+      * @var \Swagger\Client\Model\SmsRecipient[]
       */
-    protected $document_status;
+    protected $sms_recipients;
     
     /**
-      * $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
-      * @var string
+      * $wechat_recipients \u6240\u6709\u5FAE\u4FE1\u63A5\u6536\u8005
+      * @var \Swagger\Client\Model\WechatRecipient[]
       */
-    protected $uri;
+    protected $wechat_recipients;
     
 
     /**
@@ -130,72 +130,72 @@ class DocumentSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->document_id = $data["document_id"];
-            $this->document_status = $data["document_status"];
-            $this->uri = $data["uri"];
+            $this->emai_recipients = $data["emai_recipients"];
+            $this->sms_recipients = $data["sms_recipients"];
+            $this->wechat_recipients = $data["wechat_recipients"];
         }
     }
     
     /**
-     * Gets document_id
-     * @return string
+     * Gets emai_recipients
+     * @return \Swagger\Client\Model\EmailRecipient[]
      */
-    public function getDocumentId()
+    public function getEmaiRecipients()
     {
-        return $this->document_id;
+        return $this->emai_recipients;
     }
   
     /**
-     * Sets document_id
-     * @param string $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+     * Sets emai_recipients
+     * @param \Swagger\Client\Model\EmailRecipient[] $emai_recipients \u6240\u6709\u90AE\u4EF6\u63A5\u6536\u8005
      * @return $this
      */
-    public function setDocumentId($document_id)
+    public function setEmaiRecipients($emai_recipients)
     {
         
-        $this->document_id = $document_id;
+        $this->emai_recipients = $emai_recipients;
         return $this;
     }
     
     /**
-     * Gets document_status
-     * @return \Swagger\Client\Model\DocumentStatus
+     * Gets sms_recipients
+     * @return \Swagger\Client\Model\SmsRecipient[]
      */
-    public function getDocumentStatus()
+    public function getSmsRecipients()
     {
-        return $this->document_status;
+        return $this->sms_recipients;
     }
   
     /**
-     * Sets document_status
-     * @param \Swagger\Client\Model\DocumentStatus $document_status 
+     * Sets sms_recipients
+     * @param \Swagger\Client\Model\SmsRecipient[] $sms_recipients \u6240\u6709\u77ED\u4FE1\u63A5\u6536\u8005
      * @return $this
      */
-    public function setDocumentStatus($document_status)
+    public function setSmsRecipients($sms_recipients)
     {
         
-        $this->document_status = $document_status;
+        $this->sms_recipients = $sms_recipients;
         return $this;
     }
     
     /**
-     * Gets uri
-     * @return string
+     * Gets wechat_recipients
+     * @return \Swagger\Client\Model\WechatRecipient[]
      */
-    public function getUri()
+    public function getWechatRecipients()
     {
-        return $this->uri;
+        return $this->wechat_recipients;
     }
   
     /**
-     * Sets uri
-     * @param string $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+     * Sets wechat_recipients
+     * @param \Swagger\Client\Model\WechatRecipient[] $wechat_recipients \u6240\u6709\u5FAE\u4FE1\u63A5\u6536\u8005
      * @return $this
      */
-    public function setUri($uri)
+    public function setWechatRecipients($wechat_recipients)
     {
         
-        $this->uri = $uri;
+        $this->wechat_recipients = $wechat_recipients;
         return $this;
     }
     

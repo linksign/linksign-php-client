@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentSummary
+ * App
  *
  * PHP version 5
  *
@@ -35,25 +35,27 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * DocumentSummary Class Doc Comment
+ * App Class Doc Comment
  *
  * @category    Class
- * @description \u6587\u6863\u7B7E\u7F72\u7ED3\u679C
+ * @description 
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSummary implements ArrayAccess
+class App implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'document_id' => 'string',
-        'document_status' => '\Swagger\Client\Model\DocumentStatus',
-        'uri' => 'string'
+        'email_template_id' => 'string',
+        'redirect_uri' => 'string',
+        'seal_html5_template_id' => 'string',
+        'signature_html5_template_id' => 'string',
+        'sms_template_id' => 'string'
     );
   
     static function swaggerTypes() {
@@ -65,9 +67,11 @@ class DocumentSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'document_id' => 'documentId',
-        'document_status' => 'documentStatus',
-        'uri' => 'uri'
+        'email_template_id' => 'emailTemplateId',
+        'redirect_uri' => 'redirectUri',
+        'seal_html5_template_id' => 'sealHtml5TemplateId',
+        'signature_html5_template_id' => 'signatureHtml5TemplateId',
+        'sms_template_id' => 'smsTemplateId'
     );
   
     static function attributeMap() {
@@ -79,9 +83,11 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'document_id' => 'setDocumentId',
-        'document_status' => 'setDocumentStatus',
-        'uri' => 'setUri'
+        'email_template_id' => 'setEmailTemplateId',
+        'redirect_uri' => 'setRedirectUri',
+        'seal_html5_template_id' => 'setSealHtml5TemplateId',
+        'signature_html5_template_id' => 'setSignatureHtml5TemplateId',
+        'sms_template_id' => 'setSmsTemplateId'
     );
   
     static function setters() {
@@ -93,9 +99,11 @@ class DocumentSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'document_id' => 'getDocumentId',
-        'document_status' => 'getDocumentStatus',
-        'uri' => 'getUri'
+        'email_template_id' => 'getEmailTemplateId',
+        'redirect_uri' => 'getRedirectUri',
+        'seal_html5_template_id' => 'getSealHtml5TemplateId',
+        'signature_html5_template_id' => 'getSignatureHtml5TemplateId',
+        'sms_template_id' => 'getSmsTemplateId'
     );
   
     static function getters() {
@@ -104,22 +112,34 @@ class DocumentSummary implements ArrayAccess
 
     
     /**
-      * $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+      * $email_template_id \u90AE\u4EF6\u6A21\u677F\u7F16\u53F7
       * @var string
       */
-    protected $document_id;
+    protected $email_template_id;
     
     /**
-      * $document_status 
-      * @var \Swagger\Client\Model\DocumentStatus
-      */
-    protected $document_status;
-    
-    /**
-      * $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+      * $redirect_uri Signature completed redirected link
       * @var string
       */
-    protected $uri;
+    protected $redirect_uri;
+    
+    /**
+      * $seal_html5_template_id \u5370\u7AE0\u91C7\u96C6H5\u9875\u9762\u6A21\u677F\u7F16\u53F7
+      * @var string
+      */
+    protected $seal_html5_template_id;
+    
+    /**
+      * $signature_html5_template_id \u7B7E\u540D\u91C7\u96C6H5\u9875\u9762\u6A21\u677F\u7F16\u53F7
+      * @var string
+      */
+    protected $signature_html5_template_id;
+    
+    /**
+      * $sms_template_id \u77ED\u4FE1\u6A21\u677F\u7F16\u53F7
+      * @var string
+      */
+    protected $sms_template_id;
     
 
     /**
@@ -130,72 +150,116 @@ class DocumentSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->document_id = $data["document_id"];
-            $this->document_status = $data["document_status"];
-            $this->uri = $data["uri"];
+            $this->email_template_id = $data["email_template_id"];
+            $this->redirect_uri = $data["redirect_uri"];
+            $this->seal_html5_template_id = $data["seal_html5_template_id"];
+            $this->signature_html5_template_id = $data["signature_html5_template_id"];
+            $this->sms_template_id = $data["sms_template_id"];
         }
     }
     
     /**
-     * Gets document_id
+     * Gets email_template_id
      * @return string
      */
-    public function getDocumentId()
+    public function getEmailTemplateId()
     {
-        return $this->document_id;
+        return $this->email_template_id;
     }
   
     /**
-     * Sets document_id
-     * @param string $document_id \u7B7E\u7F72\u540E\u7684\u6587\u6863\u7F16\u53F7
+     * Sets email_template_id
+     * @param string $email_template_id \u90AE\u4EF6\u6A21\u677F\u7F16\u53F7
      * @return $this
      */
-    public function setDocumentId($document_id)
+    public function setEmailTemplateId($email_template_id)
     {
         
-        $this->document_id = $document_id;
+        $this->email_template_id = $email_template_id;
         return $this;
     }
     
     /**
-     * Gets document_status
-     * @return \Swagger\Client\Model\DocumentStatus
+     * Gets redirect_uri
+     * @return string
      */
-    public function getDocumentStatus()
+    public function getRedirectUri()
     {
-        return $this->document_status;
+        return $this->redirect_uri;
     }
   
     /**
-     * Sets document_status
-     * @param \Swagger\Client\Model\DocumentStatus $document_status 
+     * Sets redirect_uri
+     * @param string $redirect_uri Signature completed redirected link
      * @return $this
      */
-    public function setDocumentStatus($document_status)
+    public function setRedirectUri($redirect_uri)
     {
         
-        $this->document_status = $document_status;
+        $this->redirect_uri = $redirect_uri;
         return $this;
     }
     
     /**
-     * Gets uri
+     * Gets seal_html5_template_id
      * @return string
      */
-    public function getUri()
+    public function getSealHtml5TemplateId()
     {
-        return $this->uri;
+        return $this->seal_html5_template_id;
     }
   
     /**
-     * Sets uri
-     * @param string $uri \u7B7E\u7F72\u540E\u7684\u6587\u6863\u4E0B\u8F7D\u94FE\u63A5
+     * Sets seal_html5_template_id
+     * @param string $seal_html5_template_id \u5370\u7AE0\u91C7\u96C6H5\u9875\u9762\u6A21\u677F\u7F16\u53F7
      * @return $this
      */
-    public function setUri($uri)
+    public function setSealHtml5TemplateId($seal_html5_template_id)
     {
         
-        $this->uri = $uri;
+        $this->seal_html5_template_id = $seal_html5_template_id;
+        return $this;
+    }
+    
+    /**
+     * Gets signature_html5_template_id
+     * @return string
+     */
+    public function getSignatureHtml5TemplateId()
+    {
+        return $this->signature_html5_template_id;
+    }
+  
+    /**
+     * Sets signature_html5_template_id
+     * @param string $signature_html5_template_id \u7B7E\u540D\u91C7\u96C6H5\u9875\u9762\u6A21\u677F\u7F16\u53F7
+     * @return $this
+     */
+    public function setSignatureHtml5TemplateId($signature_html5_template_id)
+    {
+        
+        $this->signature_html5_template_id = $signature_html5_template_id;
+        return $this;
+    }
+    
+    /**
+     * Gets sms_template_id
+     * @return string
+     */
+    public function getSmsTemplateId()
+    {
+        return $this->sms_template_id;
+    }
+  
+    /**
+     * Sets sms_template_id
+     * @param string $sms_template_id \u77ED\u4FE1\u6A21\u677F\u7F16\u53F7
+     * @return $this
+     */
+    public function setSmsTemplateId($sms_template_id)
+    {
+        
+        $this->sms_template_id = $sms_template_id;
         return $this;
     }
     
