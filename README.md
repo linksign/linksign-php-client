@@ -87,7 +87,7 @@ linksign-php-client/test/SdkUnitTests.php
 ```
 #调试工具
 注意：调试前，浏览器需要先导入客户端数字证书
-* https://api.linksign.cn/debuger
+* https://api.linksign.cn/v1/debug
 
 #技术支持
 * https://www.linksign.cn
