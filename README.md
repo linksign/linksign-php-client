@@ -89,5 +89,5 @@ linksign-php-client/test/SdkUnitTests.php
 注意：调试前，浏览器需要先导入客户端数字证书
 * https://api.linksign.cn/v1/debug
 
-#技术支持
+# 详细的接口文档和技术支持,请联系我们
 * https://www.linksign.cn
