@@ -1,10 +1,10 @@
-# Tabs
+# TextCustomField
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date_tabs** | [**\Swagger\Client\Model\SignDateTime[]**](SignDateTime.md) | \u7B7E\u7F72\u65F6\u95F4\u4FE1\u606F | [optional] 
-**sign_here_tabs** | [**\Swagger\Client\Model\SignHere[]**](SignHere.md) |  | [optional] 
+**field_id** | **string** | \u7528\u6237\u81EA\u5B9A\u4E49\u7684\u5B57\u6BB5\u7F16\u53F7 | 
+**value** | **string** | \u5185\u5BB9 | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

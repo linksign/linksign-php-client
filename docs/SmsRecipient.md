@@ -1,10 +1,10 @@
-# Tabs
+# SmsRecipient
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date_tabs** | [**\Swagger\Client\Model\SignDateTime[]**](SignDateTime.md) | \u7B7E\u7F72\u65F6\u95F4\u4FE1\u606F | [optional] 
-**sign_here_tabs** | [**\Swagger\Client\Model\SignHere[]**](SignHere.md) |  | [optional] 
+**mobile** | **string** | \u624B\u673A\u53F7\u7801 | [optional] 
+**name** | **string** | \u59D3\u540D | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

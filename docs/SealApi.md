@@ -4,14 +4,14 @@ All URIs are relative to *https://api.linksign.cn:443/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSeal**](SealApi.md#createSeal) | **POST** /clients/{clientId}/seals | 
-[**getSeal**](SealApi.md#getSeal) | **GET** /clients/{clientId}/seals/{sealId} | 
+[**createSeal**](SealApi.md#createSeal) | **POST** /clients/{clientId}/seals | \u521B\u5EFA\u4E00\u4E2A\u5370\u7AE0
+[**getSeal**](SealApi.md#getSeal) | **GET** /clients/{clientId}/seals/{sealId} | \u83B7\u53D6\u4E00\u4E2A\u5370\u7AE0
 
 
 # **createSeal**
 > \Swagger\Client\Model\SealSummary createSeal($client_id, $body)
 
-
+\u521B\u5EFA\u4E00\u4E2A\u5370\u7AE0
 
 \u521B\u5EFA\u4E00\u4E2A\u5370\u7AE0
 
@@ -51,14 +51,14 @@ No authorization required
 ### HTTP reuqest headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSeal**
 > \Swagger\Client\Model\SealFile getSeal($client_id, $seal_id)
 
-
+\u83B7\u53D6\u4E00\u4E2A\u5370\u7AE0
 
 \u83B7\u53D6\u4E00\u4E2A\u5370\u7AE0
 
@@ -98,7 +98,7 @@ No authorization required
 ### HTTP reuqest headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

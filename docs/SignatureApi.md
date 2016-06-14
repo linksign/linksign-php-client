@@ -4,14 +4,14 @@ All URIs are relative to *https://api.linksign.cn:443/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSignature**](SignatureApi.md#createSignature) | **POST** /clients/{clientId}/signatures | 
-[**getSignature**](SignatureApi.md#getSignature) | **GET** /clients/{clientId}/signatures/{signatureId} | 
+[**createSignature**](SignatureApi.md#createSignature) | **POST** /clients/{clientId}/signatures | \u65B0\u5EFA\u4E00\u4E2A\u7B7E\u540D\u6536\u96C6\u8BF7\u6C42
+[**getSignature**](SignatureApi.md#getSignature) | **GET** /clients/{clientId}/signatures/{signatureId} | \u83B7\u53D6\u7B7E\u7F72\u56FE\u7247
 
 
 # **createSignature**
 > \Swagger\Client\Model\SignatureSummary createSignature($client_id, $body)
 
-
+\u65B0\u5EFA\u4E00\u4E2A\u7B7E\u540D\u6536\u96C6\u8BF7\u6C42
 
 \u65B0\u5EFA\u4E00\u4E2A\u7B7E\u540D\u6536\u96C6\u8BF7\u6C42
 
@@ -51,14 +51,14 @@ No authorization required
 ### HTTP reuqest headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSignature**
 > \Swagger\Client\Model\SignatureFile getSignature($client_id, $signature_id)
 
-
+\u83B7\u53D6\u7B7E\u7F72\u56FE\u7247
 
 \u83B7\u53D6\u7B7E\u7F72\u56FE\u7247
 
@@ -98,7 +98,7 @@ No authorization required
 ### HTTP reuqest headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

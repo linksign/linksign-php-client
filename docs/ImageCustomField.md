@@ -1,10 +1,12 @@
-# Tabs
+# ImageCustomField
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date_tabs** | [**\Swagger\Client\Model\SignDateTime[]**](SignDateTime.md) | \u7B7E\u7F72\u65F6\u95F4\u4FE1\u606F | [optional] 
-**sign_here_tabs** | [**\Swagger\Client\Model\SignHere[]**](SignHere.md) |  | [optional] 
+**field_id** | **string** | Custom field id | [optional] 
+**image_base64** | **string** | Base64 image file format | [optional] 
+**seal_id** | **string** | user seal ID | [optional] 
+**signature_id** | **string** | user signature ID | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
