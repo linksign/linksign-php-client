@@ -1,6 +1,6 @@
 <?php
 /**
- * SignatureSummary
+ * PersonAuth
  *
  * PHP version 5
  *
@@ -35,7 +35,7 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * SignatureSummary Class Doc Comment
+ * PersonAuth Class Doc Comment
  *
  * @category    Class
  * @description 
@@ -44,17 +44,15 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SignatureSummary implements ArrayAccess
+class PersonAuth implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'image_png_base64' => 'string',
-        'signature_file_uri' => 'string',
-        'signature_id' => 'string',
-        'signer_redirect_uri' => 'string'
+        'app' => '\Swagger\Client\Model\App',
+        'personal' => '\Swagger\Client\Model\Personal'
     );
   
     static function swaggerTypes() {
@@ -66,10 +64,8 @@ class SignatureSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'image_png_base64' => 'imagePngBase64',
-        'signature_file_uri' => 'signatureFileUri',
-        'signature_id' => 'signatureId',
-        'signer_redirect_uri' => 'signerRedirectUri'
+        'app' => 'app',
+        'personal' => 'personal'
     );
   
     static function attributeMap() {
@@ -81,10 +77,8 @@ class SignatureSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'image_png_base64' => 'setImagePngBase64',
-        'signature_file_uri' => 'setSignatureFileUri',
-        'signature_id' => 'setSignatureId',
-        'signer_redirect_uri' => 'setSignerRedirectUri'
+        'app' => 'setApp',
+        'personal' => 'setPersonal'
     );
   
     static function setters() {
@@ -96,10 +90,8 @@ class SignatureSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'image_png_base64' => 'getImagePngBase64',
-        'signature_file_uri' => 'getSignatureFileUri',
-        'signature_id' => 'getSignatureId',
-        'signer_redirect_uri' => 'getSignerRedirectUri'
+        'app' => 'getApp',
+        'personal' => 'getPersonal'
     );
   
     static function getters() {
@@ -108,28 +100,16 @@ class SignatureSummary implements ArrayAccess
 
     
     /**
-      * $image_png_base64 
-      * @var string
+      * $app 
+      * @var \Swagger\Client\Model\App
       */
-    protected $image_png_base64;
+    protected $app;
     
     /**
-      * $signature_file_uri 
-      * @var string
+      * $personal 
+      * @var \Swagger\Client\Model\Personal
       */
-    protected $signature_file_uri;
-    
-    /**
-      * $signature_id 
-      * @var string
-      */
-    protected $signature_id;
-    
-    /**
-      * $signer_redirect_uri 
-      * @var string
-      */
-    protected $signer_redirect_uri;
+    protected $personal;
     
 
     /**
@@ -140,94 +120,50 @@ class SignatureSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->image_png_base64 = $data["image_png_base64"];
-            $this->signature_file_uri = $data["signature_file_uri"];
-            $this->signature_id = $data["signature_id"];
-            $this->signer_redirect_uri = $data["signer_redirect_uri"];
+            $this->app = $data["app"];
+            $this->personal = $data["personal"];
         }
     }
     
     /**
-     * Gets image_png_base64
-     * @return string
+     * Gets app
+     * @return \Swagger\Client\Model\App
      */
-    public function getImagePngBase64()
+    public function getApp()
     {
-        return $this->image_png_base64;
+        return $this->app;
     }
   
     /**
-     * Sets image_png_base64
-     * @param string $image_png_base64 
+     * Sets app
+     * @param \Swagger\Client\Model\App $app 
      * @return $this
      */
-    public function setImagePngBase64($image_png_base64)
+    public function setApp($app)
     {
         
-        $this->image_png_base64 = $image_png_base64;
+        $this->app = $app;
         return $this;
     }
     
     /**
-     * Gets signature_file_uri
-     * @return string
+     * Gets personal
+     * @return \Swagger\Client\Model\Personal
      */
-    public function getSignatureFileUri()
+    public function getPersonal()
     {
-        return $this->signature_file_uri;
+        return $this->personal;
     }
   
     /**
-     * Sets signature_file_uri
-     * @param string $signature_file_uri 
+     * Sets personal
+     * @param \Swagger\Client\Model\Personal $personal 
      * @return $this
      */
-    public function setSignatureFileUri($signature_file_uri)
+    public function setPersonal($personal)
     {
         
-        $this->signature_file_uri = $signature_file_uri;
-        return $this;
-    }
-    
-    /**
-     * Gets signature_id
-     * @return string
-     */
-    public function getSignatureId()
-    {
-        return $this->signature_id;
-    }
-  
-    /**
-     * Sets signature_id
-     * @param string $signature_id 
-     * @return $this
-     */
-    public function setSignatureId($signature_id)
-    {
-        
-        $this->signature_id = $signature_id;
-        return $this;
-    }
-    
-    /**
-     * Gets signer_redirect_uri
-     * @return string
-     */
-    public function getSignerRedirectUri()
-    {
-        return $this->signer_redirect_uri;
-    }
-  
-    /**
-     * Sets signer_redirect_uri
-     * @param string $signer_redirect_uri 
-     * @return $this
-     */
-    public function setSignerRedirectUri($signer_redirect_uri)
-    {
-        
-        $this->signer_redirect_uri = $signer_redirect_uri;
+        $this->personal = $personal;
         return $this;
     }
     

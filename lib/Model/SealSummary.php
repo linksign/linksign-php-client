@@ -51,6 +51,7 @@ class SealSummary implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'image_png_base64' => 'string',
         'seal_file_uri' => 'string',
         'seal_id' => 'string',
         'sealer_redirect_uri' => 'string'
@@ -65,6 +66,7 @@ class SealSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'image_png_base64' => 'imagePngBase64',
         'seal_file_uri' => 'sealFileUri',
         'seal_id' => 'sealId',
         'sealer_redirect_uri' => 'sealerRedirectUri'
@@ -79,6 +81,7 @@ class SealSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'image_png_base64' => 'setImagePngBase64',
         'seal_file_uri' => 'setSealFileUri',
         'seal_id' => 'setSealId',
         'sealer_redirect_uri' => 'setSealerRedirectUri'
@@ -93,6 +96,7 @@ class SealSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'image_png_base64' => 'getImagePngBase64',
         'seal_file_uri' => 'getSealFileUri',
         'seal_id' => 'getSealId',
         'sealer_redirect_uri' => 'getSealerRedirectUri'
@@ -102,6 +106,12 @@ class SealSummary implements ArrayAccess
         return self::$getters;
     }
 
+    
+    /**
+      * $image_png_base64 
+      * @var string
+      */
+    protected $image_png_base64;
     
     /**
       * $seal_file_uri \u5370\u7AE0\u56FE\u7247\u4E0B\u8F7D\u5730\u5740
@@ -130,10 +140,32 @@ class SealSummary implements ArrayAccess
     {
         
         if ($data != null) {
+            $this->image_png_base64 = $data["image_png_base64"];
             $this->seal_file_uri = $data["seal_file_uri"];
             $this->seal_id = $data["seal_id"];
             $this->sealer_redirect_uri = $data["sealer_redirect_uri"];
         }
+    }
+    
+    /**
+     * Gets image_png_base64
+     * @return string
+     */
+    public function getImagePngBase64()
+    {
+        return $this->image_png_base64;
+    }
+  
+    /**
+     * Sets image_png_base64
+     * @param string $image_png_base64 
+     * @return $this
+     */
+    public function setImagePngBase64($image_png_base64)
+    {
+        
+        $this->image_png_base64 = $image_png_base64;
+        return $this;
     }
     
     /**

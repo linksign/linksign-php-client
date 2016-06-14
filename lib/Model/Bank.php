@@ -1,6 +1,6 @@
 <?php
 /**
- * SignatureSummary
+ * Bank
  *
  * PHP version 5
  *
@@ -35,7 +35,7 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * SignatureSummary Class Doc Comment
+ * Bank Class Doc Comment
  *
  * @category    Class
  * @description 
@@ -44,17 +44,14 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SignatureSummary implements ArrayAccess
+class Bank implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'image_png_base64' => 'string',
-        'signature_file_uri' => 'string',
-        'signature_id' => 'string',
-        'signer_redirect_uri' => 'string'
+        'verify_amount' => 'string'
     );
   
     static function swaggerTypes() {
@@ -66,10 +63,7 @@ class SignatureSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'image_png_base64' => 'imagePngBase64',
-        'signature_file_uri' => 'signatureFileUri',
-        'signature_id' => 'signatureId',
-        'signer_redirect_uri' => 'signerRedirectUri'
+        'verify_amount' => 'verifyAmount'
     );
   
     static function attributeMap() {
@@ -81,10 +75,7 @@ class SignatureSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'image_png_base64' => 'setImagePngBase64',
-        'signature_file_uri' => 'setSignatureFileUri',
-        'signature_id' => 'setSignatureId',
-        'signer_redirect_uri' => 'setSignerRedirectUri'
+        'verify_amount' => 'setVerifyAmount'
     );
   
     static function setters() {
@@ -96,10 +87,7 @@ class SignatureSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'image_png_base64' => 'getImagePngBase64',
-        'signature_file_uri' => 'getSignatureFileUri',
-        'signature_id' => 'getSignatureId',
-        'signer_redirect_uri' => 'getSignerRedirectUri'
+        'verify_amount' => 'getVerifyAmount'
     );
   
     static function getters() {
@@ -108,28 +96,10 @@ class SignatureSummary implements ArrayAccess
 
     
     /**
-      * $image_png_base64 
+      * $verify_amount 
       * @var string
       */
-    protected $image_png_base64;
-    
-    /**
-      * $signature_file_uri 
-      * @var string
-      */
-    protected $signature_file_uri;
-    
-    /**
-      * $signature_id 
-      * @var string
-      */
-    protected $signature_id;
-    
-    /**
-      * $signer_redirect_uri 
-      * @var string
-      */
-    protected $signer_redirect_uri;
+    protected $verify_amount;
     
 
     /**
@@ -140,94 +110,28 @@ class SignatureSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->image_png_base64 = $data["image_png_base64"];
-            $this->signature_file_uri = $data["signature_file_uri"];
-            $this->signature_id = $data["signature_id"];
-            $this->signer_redirect_uri = $data["signer_redirect_uri"];
+            $this->verify_amount = $data["verify_amount"];
         }
     }
     
     /**
-     * Gets image_png_base64
+     * Gets verify_amount
      * @return string
      */
-    public function getImagePngBase64()
+    public function getVerifyAmount()
     {
-        return $this->image_png_base64;
+        return $this->verify_amount;
     }
   
     /**
-     * Sets image_png_base64
-     * @param string $image_png_base64 
+     * Sets verify_amount
+     * @param string $verify_amount 
      * @return $this
      */
-    public function setImagePngBase64($image_png_base64)
+    public function setVerifyAmount($verify_amount)
     {
         
-        $this->image_png_base64 = $image_png_base64;
-        return $this;
-    }
-    
-    /**
-     * Gets signature_file_uri
-     * @return string
-     */
-    public function getSignatureFileUri()
-    {
-        return $this->signature_file_uri;
-    }
-  
-    /**
-     * Sets signature_file_uri
-     * @param string $signature_file_uri 
-     * @return $this
-     */
-    public function setSignatureFileUri($signature_file_uri)
-    {
-        
-        $this->signature_file_uri = $signature_file_uri;
-        return $this;
-    }
-    
-    /**
-     * Gets signature_id
-     * @return string
-     */
-    public function getSignatureId()
-    {
-        return $this->signature_id;
-    }
-  
-    /**
-     * Sets signature_id
-     * @param string $signature_id 
-     * @return $this
-     */
-    public function setSignatureId($signature_id)
-    {
-        
-        $this->signature_id = $signature_id;
-        return $this;
-    }
-    
-    /**
-     * Gets signer_redirect_uri
-     * @return string
-     */
-    public function getSignerRedirectUri()
-    {
-        return $this->signer_redirect_uri;
-    }
-  
-    /**
-     * Sets signer_redirect_uri
-     * @param string $signer_redirect_uri 
-     * @return $this
-     */
-    public function setSignerRedirectUri($signer_redirect_uri)
-    {
-        
-        $this->signer_redirect_uri = $signer_redirect_uri;
+        $this->verify_amount = $verify_amount;
         return $this;
     }
     

@@ -51,16 +51,23 @@ class Company implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'authorization_letter_image_base64' => 'string',
+        'bank_account_number' => 'string',
+        'bank_location' => 'string',
+        'bank_name' => 'string',
         'email_notice' => 'string',
         'linksign_user_id' => 'string',
         'org_authorizer_email' => 'string',
+        'org_authorizer_idcard_image_base64' => 'string',
         'org_authorizer_idcard_number' => 'string',
         'org_authorizer_idcard_type' => 'string',
         'org_authorizer_name' => 'string',
         'org_authorizer_phone' => 'string',
+        'org_idcard_image_base64' => 'string',
         'org_idcard_number' => 'string',
         'org_idcard_type' => 'string',
         'org_name' => 'string',
+        'org_seal_image_base64' => 'string',
         'recipient_index' => 'string',
         'sms_notice' => 'string'
     );
@@ -74,16 +81,23 @@ class Company implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'authorization_letter_image_base64' => 'authorizationLetterImageBase64',
+        'bank_account_number' => 'bankAccountNumber',
+        'bank_location' => 'bankLocation',
+        'bank_name' => 'bankName',
         'email_notice' => 'emailNotice',
         'linksign_user_id' => 'linksignUserId',
         'org_authorizer_email' => 'orgAuthorizerEmail',
+        'org_authorizer_idcard_image_base64' => 'orgAuthorizerIdcardImageBase64',
         'org_authorizer_idcard_number' => 'orgAuthorizerIdcardNumber',
         'org_authorizer_idcard_type' => 'orgAuthorizerIdcardType',
         'org_authorizer_name' => 'orgAuthorizerName',
         'org_authorizer_phone' => 'orgAuthorizerPhone',
+        'org_idcard_image_base64' => 'orgIdcardImageBase64',
         'org_idcard_number' => 'orgIdcardNumber',
         'org_idcard_type' => 'orgIdcardType',
         'org_name' => 'orgName',
+        'org_seal_image_base64' => 'orgSealImageBase64',
         'recipient_index' => 'recipientIndex',
         'sms_notice' => 'smsNotice'
     );
@@ -97,16 +111,23 @@ class Company implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'authorization_letter_image_base64' => 'setAuthorizationLetterImageBase64',
+        'bank_account_number' => 'setBankAccountNumber',
+        'bank_location' => 'setBankLocation',
+        'bank_name' => 'setBankName',
         'email_notice' => 'setEmailNotice',
         'linksign_user_id' => 'setLinksignUserId',
         'org_authorizer_email' => 'setOrgAuthorizerEmail',
+        'org_authorizer_idcard_image_base64' => 'setOrgAuthorizerIdcardImageBase64',
         'org_authorizer_idcard_number' => 'setOrgAuthorizerIdcardNumber',
         'org_authorizer_idcard_type' => 'setOrgAuthorizerIdcardType',
         'org_authorizer_name' => 'setOrgAuthorizerName',
         'org_authorizer_phone' => 'setOrgAuthorizerPhone',
+        'org_idcard_image_base64' => 'setOrgIdcardImageBase64',
         'org_idcard_number' => 'setOrgIdcardNumber',
         'org_idcard_type' => 'setOrgIdcardType',
         'org_name' => 'setOrgName',
+        'org_seal_image_base64' => 'setOrgSealImageBase64',
         'recipient_index' => 'setRecipientIndex',
         'sms_notice' => 'setSmsNotice'
     );
@@ -120,16 +141,23 @@ class Company implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'authorization_letter_image_base64' => 'getAuthorizationLetterImageBase64',
+        'bank_account_number' => 'getBankAccountNumber',
+        'bank_location' => 'getBankLocation',
+        'bank_name' => 'getBankName',
         'email_notice' => 'getEmailNotice',
         'linksign_user_id' => 'getLinksignUserId',
         'org_authorizer_email' => 'getOrgAuthorizerEmail',
+        'org_authorizer_idcard_image_base64' => 'getOrgAuthorizerIdcardImageBase64',
         'org_authorizer_idcard_number' => 'getOrgAuthorizerIdcardNumber',
         'org_authorizer_idcard_type' => 'getOrgAuthorizerIdcardType',
         'org_authorizer_name' => 'getOrgAuthorizerName',
         'org_authorizer_phone' => 'getOrgAuthorizerPhone',
+        'org_idcard_image_base64' => 'getOrgIdcardImageBase64',
         'org_idcard_number' => 'getOrgIdcardNumber',
         'org_idcard_type' => 'getOrgIdcardType',
         'org_name' => 'getOrgName',
+        'org_seal_image_base64' => 'getOrgSealImageBase64',
         'recipient_index' => 'getRecipientIndex',
         'sms_notice' => 'getSmsNotice'
     );
@@ -138,6 +166,30 @@ class Company implements ArrayAccess
         return self::$getters;
     }
 
+    
+    /**
+      * $authorization_letter_image_base64 
+      * @var string
+      */
+    protected $authorization_letter_image_base64;
+    
+    /**
+      * $bank_account_number 
+      * @var string
+      */
+    protected $bank_account_number;
+    
+    /**
+      * $bank_location 
+      * @var string
+      */
+    protected $bank_location;
+    
+    /**
+      * $bank_name 
+      * @var string
+      */
+    protected $bank_name;
     
     /**
       * $email_notice \u662F\u5426\u90AE\u4EF6\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
@@ -156,6 +208,12 @@ class Company implements ArrayAccess
       * @var string
       */
     protected $org_authorizer_email;
+    
+    /**
+      * $org_authorizer_idcard_image_base64 
+      * @var string
+      */
+    protected $org_authorizer_idcard_image_base64;
     
     /**
       * $org_authorizer_idcard_number \u5355\u4F4D\u6388\u6743\u4EBA\u8BC1\u4EF6\u53F7\u7801
@@ -182,6 +240,12 @@ class Company implements ArrayAccess
     protected $org_authorizer_phone;
     
     /**
+      * $org_idcard_image_base64 
+      * @var string
+      */
+    protected $org_idcard_image_base64;
+    
+    /**
       * $org_idcard_number \u5355\u4F4D\u8BC1\u4EF6\u7F16\u53F7
       * @var string
       */
@@ -198,6 +262,12 @@ class Company implements ArrayAccess
       * @var string
       */
     protected $org_name;
+    
+    /**
+      * $org_seal_image_base64 The original seal(scan)
+      * @var string
+      */
+    protected $org_seal_image_base64;
     
     /**
       * $recipient_index \u516C\u53F8\u7D22\u5F15
@@ -220,19 +290,110 @@ class Company implements ArrayAccess
     {
         
         if ($data != null) {
+            $this->authorization_letter_image_base64 = $data["authorization_letter_image_base64"];
+            $this->bank_account_number = $data["bank_account_number"];
+            $this->bank_location = $data["bank_location"];
+            $this->bank_name = $data["bank_name"];
             $this->email_notice = $data["email_notice"];
             $this->linksign_user_id = $data["linksign_user_id"];
             $this->org_authorizer_email = $data["org_authorizer_email"];
+            $this->org_authorizer_idcard_image_base64 = $data["org_authorizer_idcard_image_base64"];
             $this->org_authorizer_idcard_number = $data["org_authorizer_idcard_number"];
             $this->org_authorizer_idcard_type = $data["org_authorizer_idcard_type"];
             $this->org_authorizer_name = $data["org_authorizer_name"];
             $this->org_authorizer_phone = $data["org_authorizer_phone"];
+            $this->org_idcard_image_base64 = $data["org_idcard_image_base64"];
             $this->org_idcard_number = $data["org_idcard_number"];
             $this->org_idcard_type = $data["org_idcard_type"];
             $this->org_name = $data["org_name"];
+            $this->org_seal_image_base64 = $data["org_seal_image_base64"];
             $this->recipient_index = $data["recipient_index"];
             $this->sms_notice = $data["sms_notice"];
         }
+    }
+    
+    /**
+     * Gets authorization_letter_image_base64
+     * @return string
+     */
+    public function getAuthorizationLetterImageBase64()
+    {
+        return $this->authorization_letter_image_base64;
+    }
+  
+    /**
+     * Sets authorization_letter_image_base64
+     * @param string $authorization_letter_image_base64 
+     * @return $this
+     */
+    public function setAuthorizationLetterImageBase64($authorization_letter_image_base64)
+    {
+        
+        $this->authorization_letter_image_base64 = $authorization_letter_image_base64;
+        return $this;
+    }
+    
+    /**
+     * Gets bank_account_number
+     * @return string
+     */
+    public function getBankAccountNumber()
+    {
+        return $this->bank_account_number;
+    }
+  
+    /**
+     * Sets bank_account_number
+     * @param string $bank_account_number 
+     * @return $this
+     */
+    public function setBankAccountNumber($bank_account_number)
+    {
+        
+        $this->bank_account_number = $bank_account_number;
+        return $this;
+    }
+    
+    /**
+     * Gets bank_location
+     * @return string
+     */
+    public function getBankLocation()
+    {
+        return $this->bank_location;
+    }
+  
+    /**
+     * Sets bank_location
+     * @param string $bank_location 
+     * @return $this
+     */
+    public function setBankLocation($bank_location)
+    {
+        
+        $this->bank_location = $bank_location;
+        return $this;
+    }
+    
+    /**
+     * Gets bank_name
+     * @return string
+     */
+    public function getBankName()
+    {
+        return $this->bank_name;
+    }
+  
+    /**
+     * Sets bank_name
+     * @param string $bank_name 
+     * @return $this
+     */
+    public function setBankName($bank_name)
+    {
+        
+        $this->bank_name = $bank_name;
+        return $this;
     }
     
     /**
@@ -295,6 +456,27 @@ class Company implements ArrayAccess
     {
         
         $this->org_authorizer_email = $org_authorizer_email;
+        return $this;
+    }
+    
+    /**
+     * Gets org_authorizer_idcard_image_base64
+     * @return string
+     */
+    public function getOrgAuthorizerIdcardImageBase64()
+    {
+        return $this->org_authorizer_idcard_image_base64;
+    }
+  
+    /**
+     * Sets org_authorizer_idcard_image_base64
+     * @param string $org_authorizer_idcard_image_base64 
+     * @return $this
+     */
+    public function setOrgAuthorizerIdcardImageBase64($org_authorizer_idcard_image_base64)
+    {
+        
+        $this->org_authorizer_idcard_image_base64 = $org_authorizer_idcard_image_base64;
         return $this;
     }
     
@@ -383,6 +565,27 @@ class Company implements ArrayAccess
     }
     
     /**
+     * Gets org_idcard_image_base64
+     * @return string
+     */
+    public function getOrgIdcardImageBase64()
+    {
+        return $this->org_idcard_image_base64;
+    }
+  
+    /**
+     * Sets org_idcard_image_base64
+     * @param string $org_idcard_image_base64 
+     * @return $this
+     */
+    public function setOrgIdcardImageBase64($org_idcard_image_base64)
+    {
+        
+        $this->org_idcard_image_base64 = $org_idcard_image_base64;
+        return $this;
+    }
+    
+    /**
      * Gets org_idcard_number
      * @return string
      */
@@ -442,6 +645,27 @@ class Company implements ArrayAccess
     {
         
         $this->org_name = $org_name;
+        return $this;
+    }
+    
+    /**
+     * Gets org_seal_image_base64
+     * @return string
+     */
+    public function getOrgSealImageBase64()
+    {
+        return $this->org_seal_image_base64;
+    }
+  
+    /**
+     * Sets org_seal_image_base64
+     * @param string $org_seal_image_base64 The original seal(scan)
+     * @return $this
+     */
+    public function setOrgSealImageBase64($org_seal_image_base64)
+    {
+        
+        $this->org_seal_image_base64 = $org_seal_image_base64;
         return $this;
     }
     

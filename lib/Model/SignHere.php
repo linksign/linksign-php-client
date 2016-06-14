@@ -174,7 +174,7 @@ class SignHere implements ArrayAccess
     protected $page_number;
     
     /**
-      * $recipient_index \u7B7E\u7F72\u4EBA\u7D22\u5F15
+      * $recipient_index \u7B7E\u7F72\u4EBA(Company)\u7D22\u5F15
       * @var string
       */
     protected $recipient_index;
@@ -353,7 +353,7 @@ class SignHere implements ArrayAccess
   
     /**
      * Sets recipient_index
-     * @param string $recipient_index \u7B7E\u7F72\u4EBA\u7D22\u5F15
+     * @param string $recipient_index \u7B7E\u7F72\u4EBA(Company)\u7D22\u5F15
      * @return $this
      */
     public function setRecipientIndex($recipient_index)

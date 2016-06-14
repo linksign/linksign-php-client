@@ -1,6 +1,6 @@
 <?php
 /**
- * SignatureSummary
+ * PersonAuthSummary
  *
  * PHP version 5
  *
@@ -35,7 +35,7 @@ namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 /**
- * SignatureSummary Class Doc Comment
+ * PersonAuthSummary Class Doc Comment
  *
  * @category    Class
  * @description 
@@ -44,17 +44,17 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SignatureSummary implements ArrayAccess
+class PersonAuthSummary implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'image_png_base64' => 'string',
-        'signature_file_uri' => 'string',
-        'signature_id' => 'string',
-        'signer_redirect_uri' => 'string'
+        'banking_status' => 'string',
+        'person_id' => 'string',
+        'redirect_uri' => 'string',
+        'wechat_status' => 'string'
     );
   
     static function swaggerTypes() {
@@ -66,10 +66,10 @@ class SignatureSummary implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'image_png_base64' => 'imagePngBase64',
-        'signature_file_uri' => 'signatureFileUri',
-        'signature_id' => 'signatureId',
-        'signer_redirect_uri' => 'signerRedirectUri'
+        'banking_status' => 'bankingStatus',
+        'person_id' => 'personId',
+        'redirect_uri' => 'redirectUri',
+        'wechat_status' => 'wechatStatus'
     );
   
     static function attributeMap() {
@@ -81,10 +81,10 @@ class SignatureSummary implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'image_png_base64' => 'setImagePngBase64',
-        'signature_file_uri' => 'setSignatureFileUri',
-        'signature_id' => 'setSignatureId',
-        'signer_redirect_uri' => 'setSignerRedirectUri'
+        'banking_status' => 'setBankingStatus',
+        'person_id' => 'setPersonId',
+        'redirect_uri' => 'setRedirectUri',
+        'wechat_status' => 'setWechatStatus'
     );
   
     static function setters() {
@@ -96,10 +96,10 @@ class SignatureSummary implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'image_png_base64' => 'getImagePngBase64',
-        'signature_file_uri' => 'getSignatureFileUri',
-        'signature_id' => 'getSignatureId',
-        'signer_redirect_uri' => 'getSignerRedirectUri'
+        'banking_status' => 'getBankingStatus',
+        'person_id' => 'getPersonId',
+        'redirect_uri' => 'getRedirectUri',
+        'wechat_status' => 'getWechatStatus'
     );
   
     static function getters() {
@@ -108,28 +108,28 @@ class SignatureSummary implements ArrayAccess
 
     
     /**
-      * $image_png_base64 
+      * $banking_status pending/fail/success
       * @var string
       */
-    protected $image_png_base64;
+    protected $banking_status;
     
     /**
-      * $signature_file_uri 
+      * $person_id 
       * @var string
       */
-    protected $signature_file_uri;
+    protected $person_id;
     
     /**
-      * $signature_id 
+      * $redirect_uri 
       * @var string
       */
-    protected $signature_id;
+    protected $redirect_uri;
     
     /**
-      * $signer_redirect_uri 
+      * $wechat_status pending/fail/success
       * @var string
       */
-    protected $signer_redirect_uri;
+    protected $wechat_status;
     
 
     /**
@@ -140,94 +140,94 @@ class SignatureSummary implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->image_png_base64 = $data["image_png_base64"];
-            $this->signature_file_uri = $data["signature_file_uri"];
-            $this->signature_id = $data["signature_id"];
-            $this->signer_redirect_uri = $data["signer_redirect_uri"];
+            $this->banking_status = $data["banking_status"];
+            $this->person_id = $data["person_id"];
+            $this->redirect_uri = $data["redirect_uri"];
+            $this->wechat_status = $data["wechat_status"];
         }
     }
     
     /**
-     * Gets image_png_base64
+     * Gets banking_status
      * @return string
      */
-    public function getImagePngBase64()
+    public function getBankingStatus()
     {
-        return $this->image_png_base64;
+        return $this->banking_status;
     }
   
     /**
-     * Sets image_png_base64
-     * @param string $image_png_base64 
+     * Sets banking_status
+     * @param string $banking_status pending/fail/success
      * @return $this
      */
-    public function setImagePngBase64($image_png_base64)
+    public function setBankingStatus($banking_status)
     {
         
-        $this->image_png_base64 = $image_png_base64;
+        $this->banking_status = $banking_status;
         return $this;
     }
     
     /**
-     * Gets signature_file_uri
+     * Gets person_id
      * @return string
      */
-    public function getSignatureFileUri()
+    public function getPersonId()
     {
-        return $this->signature_file_uri;
+        return $this->person_id;
     }
   
     /**
-     * Sets signature_file_uri
-     * @param string $signature_file_uri 
+     * Sets person_id
+     * @param string $person_id 
      * @return $this
      */
-    public function setSignatureFileUri($signature_file_uri)
+    public function setPersonId($person_id)
     {
         
-        $this->signature_file_uri = $signature_file_uri;
+        $this->person_id = $person_id;
         return $this;
     }
     
     /**
-     * Gets signature_id
+     * Gets redirect_uri
      * @return string
      */
-    public function getSignatureId()
+    public function getRedirectUri()
     {
-        return $this->signature_id;
+        return $this->redirect_uri;
     }
   
     /**
-     * Sets signature_id
-     * @param string $signature_id 
+     * Sets redirect_uri
+     * @param string $redirect_uri 
      * @return $this
      */
-    public function setSignatureId($signature_id)
+    public function setRedirectUri($redirect_uri)
     {
         
-        $this->signature_id = $signature_id;
+        $this->redirect_uri = $redirect_uri;
         return $this;
     }
     
     /**
-     * Gets signer_redirect_uri
+     * Gets wechat_status
      * @return string
      */
-    public function getSignerRedirectUri()
+    public function getWechatStatus()
     {
-        return $this->signer_redirect_uri;
+        return $this->wechat_status;
     }
   
     /**
-     * Sets signer_redirect_uri
-     * @param string $signer_redirect_uri 
+     * Sets wechat_status
+     * @param string $wechat_status pending/fail/success
      * @return $this
      */
-    public function setSignerRedirectUri($signer_redirect_uri)
+    public function setWechatStatus($wechat_status)
     {
         
-        $this->signer_redirect_uri = $signer_redirect_uri;
+        $this->wechat_status = $wechat_status;
         return $this;
     }
     

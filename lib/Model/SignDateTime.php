@@ -56,7 +56,8 @@ class SignDateTime implements ArrayAccess
         'font_name' => 'string',
         'font_size' => 'float',
         'page_number' => 'int',
-        'recipient_index' => 'string',
+        'recipient_company_index' => 'string',
+        'recipient_personal_index' => 'string',
         'template_date_field_id' => 'string',
         'width' => 'int',
         'x_position' => 'int',
@@ -77,7 +78,8 @@ class SignDateTime implements ArrayAccess
         'font_name' => 'fontName',
         'font_size' => 'fontSize',
         'page_number' => 'pageNumber',
-        'recipient_index' => 'recipientIndex',
+        'recipient_company_index' => 'recipientCompanyIndex',
+        'recipient_personal_index' => 'recipientPersonalIndex',
         'template_date_field_id' => 'templateDateFieldId',
         'width' => 'width',
         'x_position' => 'xPosition',
@@ -98,7 +100,8 @@ class SignDateTime implements ArrayAccess
         'font_name' => 'setFontName',
         'font_size' => 'setFontSize',
         'page_number' => 'setPageNumber',
-        'recipient_index' => 'setRecipientIndex',
+        'recipient_company_index' => 'setRecipientCompanyIndex',
+        'recipient_personal_index' => 'setRecipientPersonalIndex',
         'template_date_field_id' => 'setTemplateDateFieldId',
         'width' => 'setWidth',
         'x_position' => 'setXPosition',
@@ -119,7 +122,8 @@ class SignDateTime implements ArrayAccess
         'font_name' => 'getFontName',
         'font_size' => 'getFontSize',
         'page_number' => 'getPageNumber',
-        'recipient_index' => 'getRecipientIndex',
+        'recipient_company_index' => 'getRecipientCompanyIndex',
+        'recipient_personal_index' => 'getRecipientPersonalIndex',
         'template_date_field_id' => 'getTemplateDateFieldId',
         'width' => 'getWidth',
         'x_position' => 'getXPosition',
@@ -162,10 +166,16 @@ class SignDateTime implements ArrayAccess
     protected $page_number;
     
     /**
-      * $recipient_index \u7B7E\u7F72\u4EBA\u7D22\u5F15\u53F7
+      * $recipient_company_index \u5E94\u7528\u7CFB\u7EDF\u4E2D\u7684\u7B7E\u7F72\u4EBA\uFF08\u516C\u53F8\uFF09\u552F\u4E00\u7D22\u5F15\u53F7
       * @var string
       */
-    protected $recipient_index;
+    protected $recipient_company_index;
+    
+    /**
+      * $recipient_personal_index \u5E94\u7528\u7CFB\u7EDF\u4E2D\u7684\u7B7E\u7F72\u4EBA\uFF08\u4E2A\u4EBA\uFF09\u552F\u4E00\u7D22\u5F15\u53F7
+      * @var string
+      */
+    protected $recipient_personal_index;
     
     /**
       * $template_date_field_id \u6A21\u677F\u65F6\u95F4\u5B57\u6BB5\u540D
@@ -205,7 +215,8 @@ class SignDateTime implements ArrayAccess
             $this->font_name = $data["font_name"];
             $this->font_size = $data["font_size"];
             $this->page_number = $data["page_number"];
-            $this->recipient_index = $data["recipient_index"];
+            $this->recipient_company_index = $data["recipient_company_index"];
+            $this->recipient_personal_index = $data["recipient_personal_index"];
             $this->template_date_field_id = $data["template_date_field_id"];
             $this->width = $data["width"];
             $this->x_position = $data["x_position"];
@@ -319,23 +330,44 @@ class SignDateTime implements ArrayAccess
     }
     
     /**
-     * Gets recipient_index
+     * Gets recipient_company_index
      * @return string
      */
-    public function getRecipientIndex()
+    public function getRecipientCompanyIndex()
     {
-        return $this->recipient_index;
+        return $this->recipient_company_index;
     }
   
     /**
-     * Sets recipient_index
-     * @param string $recipient_index \u7B7E\u7F72\u4EBA\u7D22\u5F15\u53F7
+     * Sets recipient_company_index
+     * @param string $recipient_company_index \u5E94\u7528\u7CFB\u7EDF\u4E2D\u7684\u7B7E\u7F72\u4EBA\uFF08\u516C\u53F8\uFF09\u552F\u4E00\u7D22\u5F15\u53F7
      * @return $this
      */
-    public function setRecipientIndex($recipient_index)
+    public function setRecipientCompanyIndex($recipient_company_index)
     {
         
-        $this->recipient_index = $recipient_index;
+        $this->recipient_company_index = $recipient_company_index;
+        return $this;
+    }
+    
+    /**
+     * Gets recipient_personal_index
+     * @return string
+     */
+    public function getRecipientPersonalIndex()
+    {
+        return $this->recipient_personal_index;
+    }
+  
+    /**
+     * Sets recipient_personal_index
+     * @param string $recipient_personal_index \u5E94\u7528\u7CFB\u7EDF\u4E2D\u7684\u7B7E\u7F72\u4EBA\uFF08\u4E2A\u4EBA\uFF09\u552F\u4E00\u7D22\u5F15\u53F7
+     * @return $this
+     */
+    public function setRecipientPersonalIndex($recipient_personal_index)
+    {
+        
+        $this->recipient_personal_index = $recipient_personal_index;
         return $this;
     }
     

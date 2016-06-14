@@ -51,15 +51,20 @@ class Personal implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'bank_account_number' => 'string',
+        'bank_location' => 'string',
+        'bank_name' => 'string',
         'email_notice' => 'string',
         'linksign_user_id' => 'string',
         'person_email' => 'string',
+        'person_idcard_image_base64' => 'string',
         'person_idcard_number' => 'string',
         'person_idcard_type' => 'string',
         'person_name' => 'string',
         'person_org_name' => 'string',
         'person_phone' => 'string',
         'recipient_index' => 'string',
+        'signature_image_base64' => 'string',
         'sms_notice' => 'string'
     );
   
@@ -72,15 +77,20 @@ class Personal implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'bank_account_number' => 'bankAccountNumber',
+        'bank_location' => 'bankLocation',
+        'bank_name' => 'bankName',
         'email_notice' => 'emailNotice',
         'linksign_user_id' => 'linksignUserId',
         'person_email' => 'personEmail',
+        'person_idcard_image_base64' => 'personIdcardImageBase64',
         'person_idcard_number' => 'personIdcardNumber',
         'person_idcard_type' => 'personIdcardType',
         'person_name' => 'personName',
         'person_org_name' => 'personOrgName',
         'person_phone' => 'personPhone',
         'recipient_index' => 'recipientIndex',
+        'signature_image_base64' => 'signatureImageBase64',
         'sms_notice' => 'smsNotice'
     );
   
@@ -93,15 +103,20 @@ class Personal implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'bank_account_number' => 'setBankAccountNumber',
+        'bank_location' => 'setBankLocation',
+        'bank_name' => 'setBankName',
         'email_notice' => 'setEmailNotice',
         'linksign_user_id' => 'setLinksignUserId',
         'person_email' => 'setPersonEmail',
+        'person_idcard_image_base64' => 'setPersonIdcardImageBase64',
         'person_idcard_number' => 'setPersonIdcardNumber',
         'person_idcard_type' => 'setPersonIdcardType',
         'person_name' => 'setPersonName',
         'person_org_name' => 'setPersonOrgName',
         'person_phone' => 'setPersonPhone',
         'recipient_index' => 'setRecipientIndex',
+        'signature_image_base64' => 'setSignatureImageBase64',
         'sms_notice' => 'setSmsNotice'
     );
   
@@ -114,15 +129,20 @@ class Personal implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'bank_account_number' => 'getBankAccountNumber',
+        'bank_location' => 'getBankLocation',
+        'bank_name' => 'getBankName',
         'email_notice' => 'getEmailNotice',
         'linksign_user_id' => 'getLinksignUserId',
         'person_email' => 'getPersonEmail',
+        'person_idcard_image_base64' => 'getPersonIdcardImageBase64',
         'person_idcard_number' => 'getPersonIdcardNumber',
         'person_idcard_type' => 'getPersonIdcardType',
         'person_name' => 'getPersonName',
         'person_org_name' => 'getPersonOrgName',
         'person_phone' => 'getPersonPhone',
         'recipient_index' => 'getRecipientIndex',
+        'signature_image_base64' => 'getSignatureImageBase64',
         'sms_notice' => 'getSmsNotice'
     );
   
@@ -130,6 +150,24 @@ class Personal implements ArrayAccess
         return self::$getters;
     }
 
+    
+    /**
+      * $bank_account_number 
+      * @var string
+      */
+    protected $bank_account_number;
+    
+    /**
+      * $bank_location 
+      * @var string
+      */
+    protected $bank_location;
+    
+    /**
+      * $bank_name 
+      * @var string
+      */
+    protected $bank_name;
     
     /**
       * $email_notice \u662F\u5426\u90AE\u4EF6\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
@@ -148,6 +186,12 @@ class Personal implements ArrayAccess
       * @var string
       */
     protected $person_email;
+    
+    /**
+      * $person_idcard_image_base64 
+      * @var string
+      */
+    protected $person_idcard_image_base64;
     
     /**
       * $person_idcard_number 
@@ -186,6 +230,12 @@ class Personal implements ArrayAccess
     protected $recipient_index;
     
     /**
+      * $signature_image_base64 The original signature (scan)
+      * @var string
+      */
+    protected $signature_image_base64;
+    
+    /**
       * $sms_notice \u662F\u5426\u77ED\u4FE1\u901A\u77E5\u7B7E\u7F72\u4EBA(y/n)
       * @var string
       */
@@ -200,17 +250,85 @@ class Personal implements ArrayAccess
     {
         
         if ($data != null) {
+            $this->bank_account_number = $data["bank_account_number"];
+            $this->bank_location = $data["bank_location"];
+            $this->bank_name = $data["bank_name"];
             $this->email_notice = $data["email_notice"];
             $this->linksign_user_id = $data["linksign_user_id"];
             $this->person_email = $data["person_email"];
+            $this->person_idcard_image_base64 = $data["person_idcard_image_base64"];
             $this->person_idcard_number = $data["person_idcard_number"];
             $this->person_idcard_type = $data["person_idcard_type"];
             $this->person_name = $data["person_name"];
             $this->person_org_name = $data["person_org_name"];
             $this->person_phone = $data["person_phone"];
             $this->recipient_index = $data["recipient_index"];
+            $this->signature_image_base64 = $data["signature_image_base64"];
             $this->sms_notice = $data["sms_notice"];
         }
+    }
+    
+    /**
+     * Gets bank_account_number
+     * @return string
+     */
+    public function getBankAccountNumber()
+    {
+        return $this->bank_account_number;
+    }
+  
+    /**
+     * Sets bank_account_number
+     * @param string $bank_account_number 
+     * @return $this
+     */
+    public function setBankAccountNumber($bank_account_number)
+    {
+        
+        $this->bank_account_number = $bank_account_number;
+        return $this;
+    }
+    
+    /**
+     * Gets bank_location
+     * @return string
+     */
+    public function getBankLocation()
+    {
+        return $this->bank_location;
+    }
+  
+    /**
+     * Sets bank_location
+     * @param string $bank_location 
+     * @return $this
+     */
+    public function setBankLocation($bank_location)
+    {
+        
+        $this->bank_location = $bank_location;
+        return $this;
+    }
+    
+    /**
+     * Gets bank_name
+     * @return string
+     */
+    public function getBankName()
+    {
+        return $this->bank_name;
+    }
+  
+    /**
+     * Sets bank_name
+     * @param string $bank_name 
+     * @return $this
+     */
+    public function setBankName($bank_name)
+    {
+        
+        $this->bank_name = $bank_name;
+        return $this;
     }
     
     /**
@@ -273,6 +391,27 @@ class Personal implements ArrayAccess
     {
         
         $this->person_email = $person_email;
+        return $this;
+    }
+    
+    /**
+     * Gets person_idcard_image_base64
+     * @return string
+     */
+    public function getPersonIdcardImageBase64()
+    {
+        return $this->person_idcard_image_base64;
+    }
+  
+    /**
+     * Sets person_idcard_image_base64
+     * @param string $person_idcard_image_base64 
+     * @return $this
+     */
+    public function setPersonIdcardImageBase64($person_idcard_image_base64)
+    {
+        
+        $this->person_idcard_image_base64 = $person_idcard_image_base64;
         return $this;
     }
     
@@ -399,6 +538,27 @@ class Personal implements ArrayAccess
     {
         
         $this->recipient_index = $recipient_index;
+        return $this;
+    }
+    
+    /**
+     * Gets signature_image_base64
+     * @return string
+     */
+    public function getSignatureImageBase64()
+    {
+        return $this->signature_image_base64;
+    }
+  
+    /**
+     * Sets signature_image_base64
+     * @param string $signature_image_base64 The original signature (scan)
+     * @return $this
+     */
+    public function setSignatureImageBase64($signature_image_base64)
+    {
+        
+        $this->signature_image_base64 = $signature_image_base64;
         return $this;
     }
     
