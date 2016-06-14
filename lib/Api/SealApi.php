@@ -94,7 +94,7 @@ class SealApi
     /**
      * createSeal
      *
-     * 
+     * \u521B\u5EFA\u4E00\u4E2A\u5370\u7AE0
      *
      * @param string $client_id  (required)
      * @param \Swagger\Client\Model\Seal $body  (optional)
@@ -111,7 +111,7 @@ class SealApi
     /**
      * createSealWithHttpInfo
      *
-     * 
+     * \u521B\u5EFA\u4E00\u4E2A\u5370\u7AE0
      *
      * @param string $client_id  (required)
      * @param \Swagger\Client\Model\Seal $body  (optional)
@@ -132,7 +132,7 @@ class SealApi
         $queryParams = array();
         $headerParams = array();
         $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        $_header_accept = ApiClient::selectHeaderAccept(array());
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -199,7 +199,7 @@ class SealApi
     /**
      * getSeal
      *
-     * 
+     * \u83B7\u53D6\u4E00\u4E2A\u5370\u7AE0
      *
      * @param string $client_id \u7CFB\u7EDF\u7F16\u53F7 (required)
      * @param string $seal_id \u5370\u7AE0\u7F16\u53F7 (required)
@@ -216,7 +216,7 @@ class SealApi
     /**
      * getSealWithHttpInfo
      *
-     * 
+     * \u83B7\u53D6\u4E00\u4E2A\u5370\u7AE0
      *
      * @param string $client_id \u7CFB\u7EDF\u7F16\u53F7 (required)
      * @param string $seal_id \u5370\u7AE0\u7F16\u53F7 (required)
@@ -241,7 +241,7 @@ class SealApi
         $queryParams = array();
         $headerParams = array();
         $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        $_header_accept = ApiClient::selectHeaderAccept(array());
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }

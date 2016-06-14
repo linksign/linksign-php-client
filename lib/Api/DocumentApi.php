@@ -94,7 +94,7 @@ class DocumentApi
     /**
      * createDocument
      *
-     * 
+     * \u7B7E\u7F72\u6587\u4EF6
      *
      * @param string $client_id  (required)
      * @param \Swagger\Client\Model\DocumentDefinition $body  (optional)
@@ -111,7 +111,7 @@ class DocumentApi
     /**
      * createDocumentWithHttpInfo
      *
-     * 
+     * \u7B7E\u7F72\u6587\u4EF6
      *
      * @param string $client_id  (required)
      * @param \Swagger\Client\Model\DocumentDefinition $body  (optional)
@@ -132,7 +132,7 @@ class DocumentApi
         $queryParams = array();
         $headerParams = array();
         $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        $_header_accept = ApiClient::selectHeaderAccept(array());
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -199,7 +199,7 @@ class DocumentApi
     /**
      * getDocument
      *
-     * 
+     * \u83B7\u53D6\u6587\u4EF6
      *
      * @param string $client_id  (required)
      * @param string $document_id  (required)
@@ -216,7 +216,7 @@ class DocumentApi
     /**
      * getDocumentWithHttpInfo
      *
-     * 
+     * \u83B7\u53D6\u6587\u4EF6
      *
      * @param string $client_id  (required)
      * @param string $document_id  (required)
@@ -241,7 +241,7 @@ class DocumentApi
         $queryParams = array();
         $headerParams = array();
         $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/pdf'));
+        $_header_accept = ApiClient::selectHeaderAccept(array());
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -297,6 +297,119 @@ class DocumentApi
             switch ($e->getCode()) { 
             case 200:
                 $data = \Swagger\Client\ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            case 400:
+                $data = \Swagger\Client\ObjectSerializer::deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiError', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    
+    /**
+     * getDocumentStatus
+     *
+     * \u83B7\u53D6\u6587\u4EF6\u7B7E\u7F72\u72B6\u6001\u3001URI
+     *
+     * @param string $client_id  (required)
+     * @param string $document_id  (required)
+     * @return \Swagger\Client\Model\DocumentStatus
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function getDocumentStatus($client_id, $document_id)
+    {
+        list($response, $statusCode, $httpHeader) = $this->getDocumentStatusWithHttpInfo ($client_id, $document_id);
+        return $response; 
+    }
+
+
+    /**
+     * getDocumentStatusWithHttpInfo
+     *
+     * \u83B7\u53D6\u6587\u4EF6\u7B7E\u7F72\u72B6\u6001\u3001URI
+     *
+     * @param string $client_id  (required)
+     * @param string $document_id  (required)
+     * @return Array of \Swagger\Client\Model\DocumentStatus, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function getDocumentStatusWithHttpInfo($client_id, $document_id)
+    {
+        
+        // verify the required parameter 'client_id' is set
+        if ($client_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $client_id when calling getDocumentStatus');
+        }
+        // verify the required parameter 'document_id' is set
+        if ($document_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $document_id when calling getDocumentStatus');
+        }
+  
+        // parse inputs
+        $resourcePath = "/clients/{clientId}/documents/{documentId}/status";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array());
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array());
+  
+        
+        
+        // path params
+        
+        if ($client_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "clientId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($client_id),
+                $resourcePath
+            );
+        }// path params
+        
+        if ($document_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "documentId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($document_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
+                $queryParams, $httpBody,
+                $headerParams, '\Swagger\Client\Model\DocumentStatus'
+            );
+            
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\Swagger\Client\ObjectSerializer::deserialize($response, '\Swagger\Client\Model\DocumentStatus', $httpHeader), $statusCode, $httpHeader);
+            
+        } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \Swagger\Client\ObjectSerializer::deserialize($e->getResponseBody(), '\Swagger\Client\Model\DocumentStatus', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             case 400:

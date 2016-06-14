@@ -94,7 +94,7 @@ class SignatureApi
     /**
      * createSignature
      *
-     * 
+     * \u65B0\u5EFA\u4E00\u4E2A\u7B7E\u540D\u6536\u96C6\u8BF7\u6C42
      *
      * @param string $client_id \u5BA2\u6237\u7F16\u53F7 (required)
      * @param \Swagger\Client\Model\Signature $body  (optional)
@@ -111,7 +111,7 @@ class SignatureApi
     /**
      * createSignatureWithHttpInfo
      *
-     * 
+     * \u65B0\u5EFA\u4E00\u4E2A\u7B7E\u540D\u6536\u96C6\u8BF7\u6C42
      *
      * @param string $client_id \u5BA2\u6237\u7F16\u53F7 (required)
      * @param \Swagger\Client\Model\Signature $body  (optional)
@@ -132,7 +132,7 @@ class SignatureApi
         $queryParams = array();
         $headerParams = array();
         $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        $_header_accept = ApiClient::selectHeaderAccept(array());
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -199,7 +199,7 @@ class SignatureApi
     /**
      * getSignature
      *
-     * 
+     * \u83B7\u53D6\u7B7E\u7F72\u56FE\u7247
      *
      * @param string $client_id \u5E94\u7528\u7CFB\u7EDF\u7F16\u53F7 (required)
      * @param string $signature_id \u7B7E\u540D\u7F16\u53F7 (required)
@@ -216,7 +216,7 @@ class SignatureApi
     /**
      * getSignatureWithHttpInfo
      *
-     * 
+     * \u83B7\u53D6\u7B7E\u7F72\u56FE\u7247
      *
      * @param string $client_id \u5E94\u7528\u7CFB\u7EDF\u7F16\u53F7 (required)
      * @param string $signature_id \u7B7E\u540D\u7F16\u53F7 (required)
@@ -241,7 +241,7 @@ class SignatureApi
         $queryParams = array();
         $headerParams = array();
         $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        $_header_accept = ApiClient::selectHeaderAccept(array());
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
