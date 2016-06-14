@@ -1,6 +1,6 @@
 <?php
 /**
- * TabsTest
+ * SmsRecipientTest
  *
  * PHP version 5
  *
@@ -34,16 +34,16 @@
 namespace Swagger\Client\Model;
 
 /**
- * TabsTest Class Doc Comment
+ * SmsRecipientTest Class Doc Comment
  *
  * @category    Class
- * @description \u7B7E\u7F72\u76F8\u5173\u4FE1\u606F
+ * @description \u77ED\u4FE1\u63A5\u6536\u8005\u4FE1\u606F
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TabsTest extends \PHPUnit_Framework_TestCase
+class SmsRecipientTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -61,9 +61,9 @@ class TabsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test Tabs
+     * Test SmsRecipient
      */
-    public function testTabs() {
+    public function testSmsRecipient() {
 
     }
 

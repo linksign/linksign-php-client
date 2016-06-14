@@ -68,7 +68,7 @@ class SealApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createSeal
      *
-     * 
+     * \u521B\u5EFA\u4E00\u4E2A\u5370\u7AE0
      *
      */
     public function test_createSeal() {
@@ -78,7 +78,7 @@ class SealApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getSeal
      *
-     * 
+     * \u83B7\u53D6\u4E00\u4E2A\u5370\u7AE0
      *
      */
     public function test_getSeal() {

@@ -1,6 +1,6 @@
 <?php
 /**
- * SignatureApiTest
+ * UserApiTest
  * PHP version 5
  *
  * @category Class
@@ -39,7 +39,7 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * SignatureApiTest Class Doc Comment
+ * UserApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
@@ -47,7 +47,7 @@ use \Swagger\Client\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SignatureApiTest extends \PHPUnit_Framework_TestCase
+class UserApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -66,22 +66,52 @@ class SignatureApiTest extends \PHPUnit_Framework_TestCase
 
     
     /**
-     * Test case for createSignature
+     * Test case for createPersonAuth
      *
-     * \u65B0\u5EFA\u4E00\u4E2A\u7B7E\u540D\u6536\u96C6\u8BF7\u6C42
+     * PostPersonaAuth
      *
      */
-    public function test_createSignature() {
+    public function test_createPersonAuth() {
 
     }
     
     /**
-     * Test case for getSignature
+     * Test case for getClientsClientIdCompanysCompanyIdAuth
      *
-     * \u83B7\u53D6\u7B7E\u7F72\u56FE\u7247
+     * getCompanyAuthStatus
      *
      */
-    public function test_getSignature() {
+    public function test_getClientsClientIdCompanysCompanyIdAuth() {
+
+    }
+    
+    /**
+     * Test case for getPersonAuthStatus
+     *
+     * getPersonAuthStatus
+     *
+     */
+    public function test_getPersonAuthStatus() {
+
+    }
+    
+    /**
+     * Test case for postClientsClientIdCompanysAuth
+     *
+     * PostCompanyAuth
+     *
+     */
+    public function test_postClientsClientIdCompanysAuth() {
+
+    }
+    
+    /**
+     * Test case for postClientsClientIdCompanysCompanyIdAuthBank
+     *
+     * PostBankInfo
+     *
+     */
+    public function test_postClientsClientIdCompanysCompanyIdAuthBank() {
 
     }
     

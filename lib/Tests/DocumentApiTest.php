@@ -68,7 +68,7 @@ class DocumentApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createDocument
      *
-     * 
+     * \u7B7E\u7F72\u6587\u4EF6
      *
      */
     public function test_createDocument() {
@@ -78,10 +78,20 @@ class DocumentApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getDocument
      *
-     * 
+     * \u83B7\u53D6\u6587\u4EF6
      *
      */
     public function test_getDocument() {
+
+    }
+    
+    /**
+     * Test case for getDocumentStatus
+     *
+     * \u83B7\u53D6\u6587\u4EF6\u7B7E\u7F72\u72B6\u6001\u3001URI
+     *
+     */
+    public function test_getDocumentStatus() {
 
     }
     
